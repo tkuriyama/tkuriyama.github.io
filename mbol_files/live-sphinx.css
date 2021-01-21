@@ -1,0 +1,265 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+
+#shell {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+
+  border: 1px solid #CCC;
+  border-right: 0;
+  border-bottom: 0;
+  padding: 10px 5px;
+  background: #FFF;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+  display: none;
+}
+
+#shell h2, #shell h2 a:link, #shell h2 a:visited,
+#shell h2 a:hover, #shell h2 a:active {
+  font-weight: normal;
+  margin: 0 0 1em 0;
+  text-align: center;
+  color: #000;
+}
+
+.sympy-live-output {
+  width: 600px;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.sympy-live-toolbar button {
+  margin-left: 0;
+}
+
+#toggleShell {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  color: #FFF;
+  padding: 0.25em;
+  background-color: #3B5526;
+  border: 0;
+  box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.2);
+}
+
+#toggleShell.shown {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Tab completion */
+
+.sympy-live-completions-toolbar #sympy-live-completions-toggle {
+  display: none;
+}
+
+.sympy-live-completions-toolbar {
+  width: 7%;
+}
+
+.sympy-live-completions-toolbar button {
+  width: 50%;
+}
+
+.sympy-live-completions {
+  padding-left: 10px;
+  line-height: 30px;
+  margin: 0;
+}
+
+/* Settings */
+
+#settings {
+  border-top: 1px solid #222;
+  margin-top: 1em;
+}
+
+#settings h3 {
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+}
+
+#settings h3 div.arrow:before, #toggleShell div.arrow:before {
+  font-family: FontAwesome;
+  content: "\f062";
+}
+
+#settings h3 div.arrow, #toggleShell div.arrow {
+  display: inline-block;
+}
+
+#settings h3 div.arrow {
+  margin-right: 6px;
+  -webkit-transform: rotate(180deg) translate(0px, 0px);
+  -moz-transform: rotate(180deg) translate(0px, 0px);
+  -o-transform: rotate(180deg) translate(0px, 0px);
+  -ms-transform: rotate(180deg) translate(0px, 0px);
+  transform: rotate(180deg) translate(0px, 0px);
+}
+
+#settings.shown h3 div.arrow {
+  -webkit-transform: rotate(0deg) translate(0px, 0px);
+  -moz-transform: rotate(0deg) translate(0px, 0px);
+  -o-transform: rotate(0deg) translate(0px, 0px);
+  -ms-transform: rotate(0deg) translate(0px, 0px);
+  transform: rotate(0deg) translate(0px, 0px);
+}
+
+#toggleShell div.arrow {
+  -webkit-transform: rotate(-45deg) translate(0px, 0px);
+  -moz-transform: rotate(-45deg) translate(0px, 0px);
+  -o-transform: rotate(-45deg) translate(0px, 0px);
+  -ms-transform: rotate(-45deg) translate(0px, 0px);
+  transform: rotate(-45deg) translate(0px, 0px);
+}
+
+#toggleShell.shown div.arrow {
+  -webkit-transform: rotate(135deg) translate(0px, 0px);
+  -moz-transform: rotate(135deg) translate(0px, 0px);
+  -o-transform: rotate(135deg) translate(0px, 0px);
+  -ms-transform: rotate(135deg) translate(0px, 0px);
+  transform: rotate(135deg) translate(0px, 0px);
+}
+
+#settings .content {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  height: 0;
+}
+
+#settings.shown .content {
+  opacity: 1;
+  display: block;
+}
+
+/* Right-docking mode */
+
+.live-sphinx-dock-right #shell {
+  position: fixed;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.live-sphinx-dock-right .body {
+  margin-right: 610px;
+}
+
+.live-sphinx-dock-right .bodywrapper {
+  margin-right: 0;
+}
+
+/* Push header navigation left */
+.live-sphinx-dock-right .related .right:first-child {
+  margin-right: 620px !important;
+}
+
+/* Code blocks on page */
+
+.sympy-live-eval-toolbar {
+  font-family: Arial;
+  font-size: 13px;
+  border-radius: 5px 5px 0 0;
+  background-color: #3B5526;
+  display: inline-block;
+  margin-bottom: -1px;
+}
+
+.sympy-live-eval-button {
+  color: #FFF;
+  border: 0;
+  background-color: transparent;
+  padding: 0.25em;
+  height: 25px;
+  line-height: 20px;
+  display: block;
+}
+
+pre {
+  margin: 0;
+}
+
+.sympy-live-eval-button:hover {
+  color: #81B953;
+  text-decoration: underline;
+}
+
+.live-statement:hover {
+  background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Styles (copied from main CSS to avoid having to include more files +
+avoid leaking these styles to the Sphinx docs) */
+
+#shell button, .sympy-live-dialog button {
+  font-family: inherit;
+  background: #370C19;
+  color: #FFF;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  cursor: pointer;
+  border-radius: 0;
+  border: 0;
+}
+
+#shell button.disabled {
+  cursor: default;
+}
+
+#shell button:hover, .sympy-live-dialog button:hover {
+  background: #552634;
+}
+
+#shell textarea, .sympy-live-dialog textarea {
+  border: 1px solid #CCC;
+}
+
+#shell select {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#shell input, #shell textarea {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+#shell #make-one-off-button {
+  background-image: url('/static/sympy-live/images/make_url.png');
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-size: 100%;
+}
+
+#shell #make-one-off-button:hover {
+  background-color: #AAA;
+}
+
+.scrolled {
+  box-shadow: 0 0 10px #293b1b;
+}
+
+.transition {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}

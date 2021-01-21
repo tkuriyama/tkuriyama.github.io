@@ -1,0 +1,3006 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://docs.sympy.org/latest/tutorial/intro.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, embed[type="application/pdf"] {
+    filter: invert(100%) hue-rotate(180deg) contrast(70%) grayscale(20%) sepia(10%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #2b2b2b;
+   --darkreader-neutral-text: #ccc7bf;
+   --darkreader-selection-background: #225899;
+   --darkreader-selection-text: #dad6ce;
+}</style><script class="darkreader darkreader--proxy">(function injectProxy() {
+        document.dispatchEvent(
+            new CustomEvent("__darkreader__inlineScriptsAllowed")
+        );
+        const addRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "addRule"
+        );
+        const insertRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "insertRule"
+        );
+        const deleteRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "deleteRule"
+        );
+        const removeRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "removeRule"
+        );
+        const cleanUp = () => {
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "addRule",
+                addRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "insertRule",
+                insertRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "deleteRule",
+                deleteRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "removeRule",
+                removeRuleDescriptor
+            );
+            document.removeEventListener("__darkreader__cleanUp", cleanUp);
+            document.removeEventListener(
+                "__darkreader__addUndefinedResolver",
+                (e) => addUndefinedResolver(e)
+            );
+        };
+        const addUndefinedResolver = (e) => {
+            customElements.whenDefined(e.detail.tag).then(() => {
+                document.dispatchEvent(
+                    new CustomEvent("__darkreader__isDefined", {
+                        detail: {tag: e.detail.tag}
+                    })
+                );
+            });
+        };
+        document.addEventListener("__darkreader__cleanUp", cleanUp);
+        document.addEventListener("__darkreader__addUndefinedResolver", (e) =>
+            addUndefinedResolver(e)
+        );
+        const updateSheetEvent = new Event("__darkreader__updateSheet");
+        function proxyAddRule(selector, style, index) {
+            addRuleDescriptor.value.call(this, selector, style, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+            return -1;
+        }
+        function proxyInsertRule(rule, index) {
+            const returnValue = insertRuleDescriptor.value.call(
+                this,
+                rule,
+                index
+            );
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+            return returnValue;
+        }
+        function proxyDeleteRule(index) {
+            deleteRuleDescriptor.value.call(this, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+        }
+        function proxyRemoveRule(index) {
+            removeRuleDescriptor.value.call(this, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+        }
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "addRule",
+            Object.assign({}, addRuleDescriptor, {value: proxyAddRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "insertRule",
+            Object.assign({}, insertRuleDescriptor, {value: proxyInsertRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "deleteRule",
+            Object.assign({}, deleteRuleDescriptor, {value: proxyDeleteRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "removeRule",
+            Object.assign({}, removeRuleDescriptor, {value: proxyRemoveRule})
+        );
+    })()</script><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #2f2f2f !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #2f2f2f;
+}
+html, body, input, textarea, select, button {
+    border-color: #787267;
+    color: #dad6ce;
+}
+a {
+    color: #598dc9;
+}
+table {
+    border-color: #616463;
+}
+::placeholder {
+    color: #aca69c;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #60622b !important;
+    color: #dad6ce !important;
+}
+::selection {
+    background-color: #225899 !important;
+    color: #dad6ce !important;
+}
+::-moz-selection {
+    background-color: #225899 !important;
+    color: #dad6ce !important;
+}</style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction — SymPy 1.7.1 documentation</title>
+    <link rel="stylesheet" href="./mbol_files/default.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="stylesheet" href="./mbol_files/pygments.css" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="stylesheet" type="text/css" href="./mbol_files/graphviz.css"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="stylesheet" type="text/css" href="./mbol_files/live-core.css"><style class="darkreader darkreader--cors" media="screen">.sympy-live-output {
+    font-family: monospace;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.25em;
+    width: 100%;
+    height: 25em;
+    overflow: auto;
+    border: 0;
+    background-color: #f5f5f5;
+}
+
+.sympy-live-output > div {
+    white-space: pre;
+}
+
+.sympy-live-output > div.sympy-live-hidden {
+    visibility: hidden;
+}
+
+.sympy-live-caret {
+    font-family: monospace;
+    font-size: 1em;
+    width: 10%;
+    width: -moz-calc(3em);
+    width: -webkit-calc(3em);
+    width: calc(3em);
+    border: 0;
+    border-top: 1px solid silver;
+    margin: 0;
+    padding: 5px 0 5px 0.25em;
+    margin-right: 0;
+    outline: none;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    resize: none;
+}
+
+.sympy-live-prompt {
+    font-family: monospace;
+    font-size: 1em;
+    width: 90%;
+    width: -moz-calc(100% - 3.25em);
+    width: -webkit-calc(100% - 3.25em);
+    width: calc(100% - 3.25em);
+    border: 0;
+    border-top: 1px solid silver;
+    margin: 0;
+    padding: 5px 0;
+    margin-left: 0;
+    border-left: 0;
+    padding-left: 0;
+    outline: none;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    background-position: top right;
+    background-repeat: no-repeat;
+    resize: none;
+}
+
+.sympy-live-toolbar {
+    margin: 5px 0 0 0;
+    height: 2em;
+}
+
+.sympy-live-toolbar > * {
+  height: 100% !important;
+}
+
+.sympy-live-toolbar > button {
+  line-height: 1;
+  margin-right: 0.5em;
+  padding: 0.5em;
+}
+
+.sympy-live-toolbar > button:first-child {
+  font-weight: bold;
+}
+
+.sympy-live-processing {
+    background-image: url("https://live.sympy.org/static/sympy-live/images/spinner.gif");
+}
+
+.sympy-live-toolbar > button.sympy-live-evaluate-disabled {
+    background-color: #999;
+    color: #000
+}
+
+.sympy-live-fullscreen-popup {
+    background: #000;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    opacity: .8;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sympy-live-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 100px;
+  bottom: 0;
+  background-color: rgba(1,1,1,0.8);
+  z-index: 10001;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+.sympy-live-dialog div {
+  border: 1px solid #81B953;
+  background-color: #FFF;
+  padding: 0.5em;
+}
+
+.sympy-live-dialog div p {
+  margin: 0.25em 0;
+}
+
+.sympy-live-dialog div textarea {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: 300px;
+  font-family: monospace;
+}
+
+.sympy-live-dialog div button {
+  padding: 0.5em;
+}
+
+#make-one-off-button {
+  float: right;
+  background-image: url("https://live.sympy.org/static/sympy-live/images/make_url.png");
+  width: 32px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  height: 32px;
+  background-size: 100%;
+}
+
+#make-one-off-button:hover {
+  background-color: #AAA;
+}
+
+#settings label {
+  display: inline-block;
+  width: 40%;
+}
+
+#settings select {
+  width: 50%;
+  font-size: 0.9em;
+}
+
+#banner {
+  display: none;
+}
+
+.content {
+  padding: 0.1em;
+}
+
+
+
+.sidebar_card h3:first-child {
+  cursor: pointer;
+}
+
+.sidebar_card .clickable_top h3:first-child:before {
+  content: "\f077";
+  font-family: FontAwesome;
+  margin-right: 0.5em;
+  color: #DDD;
+  display: inline-block;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.sidebar_card.closed .clickable_top h3:first-child:before {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#user .content {
+  padding: 0;
+}
+
+#saved_searches, #recent_searches {
+  max-height: 10em;
+  overflow-y: auto;
+}
+
+#saved_searches a, #recent_searches a {
+  display: block;
+  width: 100%;
+  margin: 0.1em 0;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  background-color: #EEE;
+}
+
+#saved_searches a pre, #recent_searches a pre {
+  margin: 0 0.5em;
+  overflow: hidden;
+}
+
+.executable {
+  cursor: pointer;
+}
+
+
+
+#main h1 {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  min-width: 960px;
+  background: #EEE;
+}
+
+.fullscreen #content {
+  width: 100% !important;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  height: 100%;
+}
+
+.fullscreen .sympy-live-output {
+  width: 100%;
+}
+
+.fullscreen .sympy-live-caret {
+  width: 10%;
+  width: -moz-calc(3em);
+  width: -webkit-calc(3em);
+  width: calc(3em);
+}
+
+.fullscreen .sympy-live-prompt {
+  position: absolute;
+  left: 4.25em;
+  right: 1.25em;
+  width: 90%;
+  width: -moz-calc(100% - 5.5em);
+  width: -webkit-calc(100% - 5.5em);
+  width: calc(100% - 5.5em);
+}
+
+#main.fullscreen h1 {
+  font-weight: 300;
+  font-size: 2em;
+  margin-left: 0.25em;
+  display: block;
+}
+
+.fullscreen .content, .fullscreen .block {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: #DDD;
+}
+
+.fullscreen #shell {
+  height: 100%;
+}
+
+.fullscreen #make-one-off-button {
+  width: 100%;
+  background-size: 32px 32px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+@media screen and (max-device-width: 767px) {
+  header {
+    position: static;
+  }
+
+  #main-navigation {
+    position: absolute;
+  }
+
+  #main {
+    margin-top: 0.5em;
+  }
+
+  #content {
+    padding: 7px 0;
+  }
+
+  .sympy-live-output, .sympy-live-caret, .sympy-live-prompt {
+    font-size: 1em;
+    padding: 0;
+  }
+
+  .sympy-live-output {
+    height: 15em;
+  }
+
+  .sympy-live-caret {
+    width: 2.5em;
+  }
+
+  .sympy-live-prompt {
+    width: -moz-calc(100% - 2.5em - 30px);
+    width: -webkit-calc(100% - 2.5em - 30px);
+    width: calc(100% - 2.5em - 30px);
+  }
+
+  .sympy-live-prompt, .sympy-live-caret {
+    float: left;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .sympy-live-toolbar {
+    margin: 0 0 0.5em 0;
+    height: auto;
+  }
+  
+  .sympy-live-toolbar > * {
+    height: auto !important;
+  }
+
+  #sympy-live-toolbar-history {
+    display: inline-block;
+    width: 30px;
+    height: 5em;
+    font-family: monospace;
+    float: right;
+  }
+
+  #sympy-live-toolbar-history button {
+    margin-left: 0;
+    display: inline;
+    width: 100%;
+    height: 50%;
+  }
+
+  #make-one-off-button {
+    float: none;
+    width: 100%;
+    background-size: 32px 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    height: 32px !important;
+  }
+
+  .sympy-live-dialog {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    bottom: 0;
+    background-color: rgba(1,1,1,0.8);
+  }
+
+  .sympy-live-dialog div {
+    height: 100%;
+  }
+
+  .sympy-live-dialog div textarea {
+    height: 40%;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .small_span_0 {
+    width: 0;
+    margin: 0;
+  }
+
+  .small_span_1 {
+    width: 14.6%;
+  }
+
+  .small_span_2 {
+    width: 31.3%;
+  }
+
+  .small_span_3 {
+    width: 50%;
+  }
+
+  .small_span_4 {
+    width: 66.6%;
+  }
+
+  .small_span_5 {
+    width: 83.3%;
+  }
+
+  .small_span_6 {
+    width: 100%;
+  }
+}</style><style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="stylesheet" type="text/css" href="./mbol_files/live-autocomplete.css"><style class="darkreader darkreader--cors" media="screen">.sympy-live-completions {
+    overflow: hidden;
+    list-style-type: none;
+    font-family: monospace;
+    font-size: 12pt;
+    width: 89%;
+    height: 30px;
+    counter-reset: completion;
+    display: inline-block;
+    -webkit-transition: height 300ms ease-out;
+    -moz-transition: height 300ms ease-out;
+    -ms-transition: height 300ms ease-out;
+    -o-transition: height 300ms ease-out;
+    transition: height 300ms ease-out;
+}
+
+.sympy-live-completions button {
+    height: 100%;
+    font-family: monospace;
+    width: 100%;
+}
+
+.sympy-live-completions.expanded {
+    max-height: 160px;
+    overflow: auto;
+}
+
+.sympy-live-completions li {
+    display: inline-block;
+    margin-right: 0.25em;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 30%;
+    background-color: transparent !important;
+}
+
+.sympy-live-completions li button {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sympy-live-completions li button.padding {
+    background-color: transparent;
+    border: 0;
+    color: #000;
+}
+
+.sympy-live-completions li.counted button:not(.padding):before {
+    counter-increment: completion;
+    content: counter(completion) ". ";
+}
+
+.sympy-live-completions-toolbar {
+    width: 10%;
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+}
+
+.sympy-live-completions-toolbar button {
+    width: 32%;
+    height: 100%;
+    border-right: 1px solid #FFF;
+}
+
+.sympy-live-completions-toolbar button.disabled {
+    background-color: #999;
+    color: #000;
+}
+
+.sympy-live-completions-toolbar button:last-child {
+    border: 0;
+}
+
+.sympy-live-completions-toolbar .sympy-live-toolbar button {
+    display: block;
+    width: 96%;
+    margin: 5px 0;
+}
+
+.sympy-live-completions-toolbar button:first-child i {
+    display: inline-block;
+    text-align: center;
+    -moz-transition: all 300ms ease-in;
+    -webkit-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;
+    -webkit-transform: rotate(0deg) translate(0px, 0px);
+    -moz-transform: rotate(0deg) translate(0px, 0px);
+    -o-transform: rotate(0deg) translate(0px, 0px);
+    -ms-transform: rotate(0deg) translate(0px, 0px);
+    transform: rotate(0deg) translate(0px, 0px);
+}
+
+.sympy-live-completions-toolbar button.hidden:first-child i {
+    -webkit-transform: rotate(-180deg) translate(0px, 0px);
+    -moz-transform: rotate(-180deg) translate(0px, 0px);
+    -o-transform: rotate(-180deg) translate(0px, 0px);
+    -ms-transform: rotate(-180deg) translate(0px, 0px);
+    transform: rotate(-180deg) translate(0px, 0px);
+}
+
+@media screen and (max-width: 767px) {
+  .sympy-live-completions {
+    padding: 0em 0.25em;
+    height: 2em;
+    font-size: 12pt;
+    width: 82%;
+  }
+
+  .sympy-live-completions li {
+    height: 2em;
+    background-color: #3b5526;
+    padding: 0 0.5em;
+    color: #FFF;
+    margin-bottom: 0.5em;
+    width: 70%;
+  }
+
+  .sympy-live-completions em {
+    color: #000;
+  }
+
+  .sympy-live-completions button {
+    border: 0;
+    padding: 0 0.25em;
+  }
+
+  .sympy-live-completions.expanded {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  p.sympy-live-toolbar select {
+    margin-right: 10px;
+  }
+
+  .sympy-live-completions-toolbar {
+    width: 15%;
+    height: 30px;
+  }
+
+  .sympy-live-completions-toolbar button {
+    height: 45px;
+    width: 100%;
+  }
+
+  .sympy-live-completions-toolbar .sympy-live-toolbar button {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #000;
+    padding: 0.5em 0;
+  }
+  
+  .sympy-live-completions-toolbar .sympy-live-toolbar button:last-child {
+    border: 0;
+  }
+
+  #sympy-live-completions-prev, #sympy-live-completions-next, #sympy-live-completions-toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sympy-live-completions {
+    float: right;
+    width: 67%;
+  }
+
+  .sympy-live-completions-toolbar {
+    width: 30%;
+    height: auto;
+    float: left;
+  }
+  
+  .sympy-live-completions li, .sympy-live-completions.expanded li {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .sympy-live-completions li, .sympy-live-completions.expanded li {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .sympy-live-completions {
+    width: 77%;
+  }
+  .sympy-live-completions-toolbar {
+    width: 20%;
+  }
+  .sympy-live-completions li, .sympy-live-completions.expanded li {
+    width: 40%;
+  }
+}</style><style class="darkreader darkreader--sync" media="screen"></style>
+    <link rel="stylesheet" type="text/css" href="./mbol_files/live-sphinx.css"><style class="darkreader darkreader--cors" media="screen">[class^="icon-"],
+[class*=" icon-"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  text-decoration: inherit;
+  display: inline-block;
+  speak: none;
+}
+
+.icon-large:before {
+  vertical-align: -10%;
+  font-size: 1.3333333333333333em;
+}
+
+a [class^="icon-"],
+a [class*=" icon-"] {
+  display: inline;
+}
+
+[class^="icon-"].icon-fixed-width,
+[class*=" icon-"].icon-fixed-width {
+  display: inline-block;
+  width: 1.1428571428571428em;
+  text-align: right;
+  padding-right: 0.2857142857142857em;
+}
+[class^="icon-"].icon-fixed-width.icon-large,
+[class*=" icon-"].icon-fixed-width.icon-large {
+  width: 1.4285714285714286em;
+}
+.icons-ul {
+  margin-left: 2.142857142857143em;
+  list-style-type: none;
+}
+.icons-ul > li {
+  position: relative;
+}
+.icons-ul .icon-li {
+  position: absolute;
+  left: -2.142857142857143em;
+  width: 2.142857142857143em;
+  text-align: center;
+  line-height: inherit;
+}
+[class^="icon-"].hide,
+[class*=" icon-"].hide {
+  display: none;
+}
+.icon-muted {
+  color: #eeeeee;
+}
+.icon-light {
+  color: #ffffff;
+}
+.icon-dark {
+  color: #333333;
+}
+.icon-border {
+  border: solid 1px #eeeeee;
+  padding: .2em .25em .15em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.icon-2x {
+  font-size: 2em;
+}
+.icon-2x.icon-border {
+  border-width: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.icon-3x {
+  font-size: 3em;
+}
+.icon-3x.icon-border {
+  border-width: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.icon-4x {
+  font-size: 4em;
+}
+.icon-4x.icon-border {
+  border-width: 4px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.icon-5x {
+  font-size: 5em;
+}
+.icon-5x.icon-border {
+  border-width: 5px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+[class^="icon-"].pull-left,
+[class*=" icon-"].pull-left {
+  margin-right: .3em;
+}
+[class^="icon-"].pull-right,
+[class*=" icon-"].pull-right {
+  margin-left: .3em;
+}
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"] {
+  background-image: none;
+}
+
+.btn [class^="icon-"].icon-large,
+.nav [class^="icon-"].icon-large,
+.btn [class*=" icon-"].icon-large,
+.nav [class*=" icon-"].icon-large {
+  line-height: .9em;
+}
+.btn [class^="icon-"].icon-spin,
+.nav [class^="icon-"].icon-spin,
+.btn [class*=" icon-"].icon-spin,
+.nav [class*=" icon-"].icon-spin {
+  display: inline-block;
+}
+.nav-tabs [class^="icon-"],
+.nav-pills [class^="icon-"],
+.nav-tabs [class*=" icon-"],
+.nav-pills [class*=" icon-"],
+.nav-tabs [class^="icon-"].icon-large,
+.nav-pills [class^="icon-"].icon-large,
+.nav-tabs [class*=" icon-"].icon-large,
+.nav-pills [class*=" icon-"].icon-large {
+  line-height: .9em;
+}
+.btn [class^="icon-"].pull-left.icon-2x,
+.btn [class*=" icon-"].pull-left.icon-2x,
+.btn [class^="icon-"].pull-right.icon-2x,
+.btn [class*=" icon-"].pull-right.icon-2x {
+  margin-top: .18em;
+}
+.btn [class^="icon-"].icon-spin.icon-large,
+.btn [class*=" icon-"].icon-spin.icon-large {
+  line-height: .8em;
+}
+.btn.btn-small [class^="icon-"].pull-left.icon-2x,
+.btn.btn-small [class*=" icon-"].pull-left.icon-2x,
+.btn.btn-small [class^="icon-"].pull-right.icon-2x,
+.btn.btn-small [class*=" icon-"].pull-right.icon-2x {
+  margin-top: .25em;
+}
+.btn.btn-large [class^="icon-"],
+.btn.btn-large [class*=" icon-"] {
+  margin-top: 0;
+}
+.btn.btn-large [class^="icon-"].pull-left.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-left.icon-2x,
+.btn.btn-large [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-right.icon-2x {
+  margin-top: .05em;
+}
+.btn.btn-large [class^="icon-"].pull-left.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-left.icon-2x {
+  margin-right: .2em;
+}
+.btn.btn-large [class^="icon-"].pull-right.icon-2x,
+.btn.btn-large [class*=" icon-"].pull-right.icon-2x {
+  margin-left: .2em;
+}
+
+.nav-list [class^="icon-"],
+.nav-list [class*=" icon-"] {
+  line-height: inherit;
+}
+
+
+.icon-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: -35%;
+}
+.icon-stack [class^="icon-"],
+.icon-stack [class*=" icon-"] {
+  display: block;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  line-height: inherit;
+  *line-height: 2em;
+}
+.icon-stack .icon-stack-base {
+  font-size: 2em;
+  *line-height: 1em;
+}
+
+.icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+a .icon-stack,
+a .icon-spin {
+  display: inline-block;
+  text-decoration: none;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.icon-rotate-90:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.icon-rotate-180:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.icon-rotate-270:before {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.icon-flip-horizontal:before {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.icon-flip-vertical:before {
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+a .icon-rotate-90:before,
+a .icon-rotate-180:before,
+a .icon-rotate-270:before,
+a .icon-flip-horizontal:before,
+a .icon-flip-vertical:before {
+  display: inline-block;
+}
+
+.icon-glass:before {
+  content: "\f000";
+}
+.icon-music:before {
+  content: "\f001";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-envelope-alt:before {
+  content: "\f003";
+}
+.icon-heart:before {
+  content: "\f004";
+}
+.icon-star:before {
+  content: "\f005";
+}
+.icon-star-empty:before {
+  content: "\f006";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-film:before {
+  content: "\f008";
+}
+.icon-th-large:before {
+  content: "\f009";
+}
+.icon-th:before {
+  content: "\f00a";
+}
+.icon-th-list:before {
+  content: "\f00b";
+}
+.icon-ok:before {
+  content: "\f00c";
+}
+.icon-remove:before {
+  content: "\f00d";
+}
+.icon-zoom-in:before {
+  content: "\f00e";
+}
+.icon-zoom-out:before {
+  content: "\f010";
+}
+.icon-power-off:before,
+.icon-off:before {
+  content: "\f011";
+}
+.icon-signal:before {
+  content: "\f012";
+}
+.icon-gear:before,
+.icon-cog:before {
+  content: "\f013";
+}
+.icon-trash:before {
+  content: "\f014";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-file-alt:before {
+  content: "\f016";
+}
+.icon-time:before {
+  content: "\f017";
+}
+.icon-road:before {
+  content: "\f018";
+}
+.icon-download-alt:before {
+  content: "\f019";
+}
+.icon-download:before {
+  content: "\f01a";
+}
+.icon-upload:before {
+  content: "\f01b";
+}
+.icon-inbox:before {
+  content: "\f01c";
+}
+.icon-play-circle:before {
+  content: "\f01d";
+}
+.icon-rotate-right:before,
+.icon-repeat:before {
+  content: "\f01e";
+}
+.icon-refresh:before {
+  content: "\f021";
+}
+.icon-list-alt:before {
+  content: "\f022";
+}
+.icon-lock:before {
+  content: "\f023";
+}
+.icon-flag:before {
+  content: "\f024";
+}
+.icon-headphones:before {
+  content: "\f025";
+}
+.icon-volume-off:before {
+  content: "\f026";
+}
+.icon-volume-down:before {
+  content: "\f027";
+}
+.icon-volume-up:before {
+  content: "\f028";
+}
+.icon-qrcode:before {
+  content: "\f029";
+}
+.icon-barcode:before {
+  content: "\f02a";
+}
+.icon-tag:before {
+  content: "\f02b";
+}
+.icon-tags:before {
+  content: "\f02c";
+}
+.icon-book:before {
+  content: "\f02d";
+}
+.icon-bookmark:before {
+  content: "\f02e";
+}
+.icon-print:before {
+  content: "\f02f";
+}
+.icon-camera:before {
+  content: "\f030";
+}
+.icon-font:before {
+  content: "\f031";
+}
+.icon-bold:before {
+  content: "\f032";
+}
+.icon-italic:before {
+  content: "\f033";
+}
+.icon-text-height:before {
+  content: "\f034";
+}
+.icon-text-width:before {
+  content: "\f035";
+}
+.icon-align-left:before {
+  content: "\f036";
+}
+.icon-align-center:before {
+  content: "\f037";
+}
+.icon-align-right:before {
+  content: "\f038";
+}
+.icon-align-justify:before {
+  content: "\f039";
+}
+.icon-list:before {
+  content: "\f03a";
+}
+.icon-indent-left:before {
+  content: "\f03b";
+}
+.icon-indent-right:before {
+  content: "\f03c";
+}
+.icon-facetime-video:before {
+  content: "\f03d";
+}
+.icon-picture:before {
+  content: "\f03e";
+}
+.icon-pencil:before {
+  content: "\f040";
+}
+.icon-map-marker:before {
+  content: "\f041";
+}
+.icon-adjust:before {
+  content: "\f042";
+}
+.icon-tint:before {
+  content: "\f043";
+}
+.icon-edit:before {
+  content: "\f044";
+}
+.icon-share:before {
+  content: "\f045";
+}
+.icon-check:before {
+  content: "\f046";
+}
+.icon-move:before {
+  content: "\f047";
+}
+.icon-step-backward:before {
+  content: "\f048";
+}
+.icon-fast-backward:before {
+  content: "\f049";
+}
+.icon-backward:before {
+  content: "\f04a";
+}
+.icon-play:before {
+  content: "\f04b";
+}
+.icon-pause:before {
+  content: "\f04c";
+}
+.icon-stop:before {
+  content: "\f04d";
+}
+.icon-forward:before {
+  content: "\f04e";
+}
+.icon-fast-forward:before {
+  content: "\f050";
+}
+.icon-step-forward:before {
+  content: "\f051";
+}
+.icon-eject:before {
+  content: "\f052";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-plus-sign:before {
+  content: "\f055";
+}
+.icon-minus-sign:before {
+  content: "\f056";
+}
+.icon-remove-sign:before {
+  content: "\f057";
+}
+.icon-ok-sign:before {
+  content: "\f058";
+}
+.icon-question-sign:before {
+  content: "\f059";
+}
+.icon-info-sign:before {
+  content: "\f05a";
+}
+.icon-screenshot:before {
+  content: "\f05b";
+}
+.icon-remove-circle:before {
+  content: "\f05c";
+}
+.icon-ok-circle:before {
+  content: "\f05d";
+}
+.icon-ban-circle:before {
+  content: "\f05e";
+}
+.icon-arrow-left:before {
+  content: "\f060";
+}
+.icon-arrow-right:before {
+  content: "\f061";
+}
+.icon-arrow-up:before {
+  content: "\f062";
+}
+.icon-arrow-down:before {
+  content: "\f063";
+}
+.icon-mail-forward:before,
+.icon-share-alt:before {
+  content: "\f064";
+}
+.icon-resize-full:before {
+  content: "\f065";
+}
+.icon-resize-small:before {
+  content: "\f066";
+}
+.icon-plus:before {
+  content: "\f067";
+}
+.icon-minus:before {
+  content: "\f068";
+}
+.icon-asterisk:before {
+  content: "\f069";
+}
+.icon-exclamation-sign:before {
+  content: "\f06a";
+}
+.icon-gift:before {
+  content: "\f06b";
+}
+.icon-leaf:before {
+  content: "\f06c";
+}
+.icon-fire:before {
+  content: "\f06d";
+}
+.icon-eye-open:before {
+  content: "\f06e";
+}
+.icon-eye-close:before {
+  content: "\f070";
+}
+.icon-warning-sign:before {
+  content: "\f071";
+}
+.icon-plane:before {
+  content: "\f072";
+}
+.icon-calendar:before {
+  content: "\f073";
+}
+.icon-random:before {
+  content: "\f074";
+}
+.icon-comment:before {
+  content: "\f075";
+}
+.icon-magnet:before {
+  content: "\f076";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-retweet:before {
+  content: "\f079";
+}
+.icon-shopping-cart:before {
+  content: "\f07a";
+}
+.icon-folder-close:before {
+  content: "\f07b";
+}
+.icon-folder-open:before {
+  content: "\f07c";
+}
+.icon-resize-vertical:before {
+  content: "\f07d";
+}
+.icon-resize-horizontal:before {
+  content: "\f07e";
+}
+.icon-bar-chart:before {
+  content: "\f080";
+}
+.icon-twitter-sign:before {
+  content: "\f081";
+}
+.icon-facebook-sign:before {
+  content: "\f082";
+}
+.icon-camera-retro:before {
+  content: "\f083";
+}
+.icon-key:before {
+  content: "\f084";
+}
+.icon-gears:before,
+.icon-cogs:before {
+  content: "\f085";
+}
+.icon-comments:before {
+  content: "\f086";
+}
+.icon-thumbs-up-alt:before {
+  content: "\f087";
+}
+.icon-thumbs-down-alt:before {
+  content: "\f088";
+}
+.icon-star-half:before {
+  content: "\f089";
+}
+.icon-heart-empty:before {
+  content: "\f08a";
+}
+.icon-signout:before {
+  content: "\f08b";
+}
+.icon-linkedin-sign:before {
+  content: "\f08c";
+}
+.icon-pushpin:before {
+  content: "\f08d";
+}
+.icon-external-link:before {
+  content: "\f08e";
+}
+.icon-signin:before {
+  content: "\f090";
+}
+.icon-trophy:before {
+  content: "\f091";
+}
+.icon-github-sign:before {
+  content: "\f092";
+}
+.icon-upload-alt:before {
+  content: "\f093";
+}
+.icon-lemon:before {
+  content: "\f094";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+.icon-unchecked:before,
+.icon-check-empty:before {
+  content: "\f096";
+}
+.icon-bookmark-empty:before {
+  content: "\f097";
+}
+.icon-phone-sign:before {
+  content: "\f098";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-unlock:before {
+  content: "\f09c";
+}
+.icon-credit-card:before {
+  content: "\f09d";
+}
+.icon-rss:before {
+  content: "\f09e";
+}
+.icon-hdd:before {
+  content: "\f0a0";
+}
+.icon-bullhorn:before {
+  content: "\f0a1";
+}
+.icon-bell:before {
+  content: "\f0a2";
+}
+.icon-certificate:before {
+  content: "\f0a3";
+}
+.icon-hand-right:before {
+  content: "\f0a4";
+}
+.icon-hand-left:before {
+  content: "\f0a5";
+}
+.icon-hand-up:before {
+  content: "\f0a6";
+}
+.icon-hand-down:before {
+  content: "\f0a7";
+}
+.icon-circle-arrow-left:before {
+  content: "\f0a8";
+}
+.icon-circle-arrow-right:before {
+  content: "\f0a9";
+}
+.icon-circle-arrow-up:before {
+  content: "\f0aa";
+}
+.icon-circle-arrow-down:before {
+  content: "\f0ab";
+}
+.icon-globe:before {
+  content: "\f0ac";
+}
+.icon-wrench:before {
+  content: "\f0ad";
+}
+.icon-tasks:before {
+  content: "\f0ae";
+}
+.icon-filter:before {
+  content: "\f0b0";
+}
+.icon-briefcase:before {
+  content: "\f0b1";
+}
+.icon-fullscreen:before {
+  content: "\f0b2";
+}
+.icon-group:before {
+  content: "\f0c0";
+}
+.icon-link:before {
+  content: "\f0c1";
+}
+.icon-cloud:before {
+  content: "\f0c2";
+}
+.icon-beaker:before {
+  content: "\f0c3";
+}
+.icon-cut:before {
+  content: "\f0c4";
+}
+.icon-copy:before {
+  content: "\f0c5";
+}
+.icon-paperclip:before,
+.icon-paper-clip:before {
+  content: "\f0c6";
+}
+.icon-save:before {
+  content: "\f0c7";
+}
+.icon-sign-blank:before {
+  content: "\f0c8";
+}
+.icon-reorder:before {
+  content: "\f0c9";
+}
+.icon-list-ul:before {
+  content: "\f0ca";
+}
+.icon-list-ol:before {
+  content: "\f0cb";
+}
+.icon-strikethrough:before {
+  content: "\f0cc";
+}
+.icon-underline:before {
+  content: "\f0cd";
+}
+.icon-table:before {
+  content: "\f0ce";
+}
+.icon-magic:before {
+  content: "\f0d0";
+}
+.icon-truck:before {
+  content: "\f0d1";
+}
+.icon-pinterest:before {
+  content: "\f0d2";
+}
+.icon-pinterest-sign:before {
+  content: "\f0d3";
+}
+.icon-google-plus-sign:before {
+  content: "\f0d4";
+}
+.icon-google-plus:before {
+  content: "\f0d5";
+}
+.icon-money:before {
+  content: "\f0d6";
+}
+.icon-caret-down:before {
+  content: "\f0d7";
+}
+.icon-caret-up:before {
+  content: "\f0d8";
+}
+.icon-caret-left:before {
+  content: "\f0d9";
+}
+.icon-caret-right:before {
+  content: "\f0da";
+}
+.icon-columns:before {
+  content: "\f0db";
+}
+.icon-sort:before {
+  content: "\f0dc";
+}
+.icon-sort-down:before {
+  content: "\f0dd";
+}
+.icon-sort-up:before {
+  content: "\f0de";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+.icon-rotate-left:before,
+.icon-undo:before {
+  content: "\f0e2";
+}
+.icon-legal:before {
+  content: "\f0e3";
+}
+.icon-dashboard:before {
+  content: "\f0e4";
+}
+.icon-comment-alt:before {
+  content: "\f0e5";
+}
+.icon-comments-alt:before {
+  content: "\f0e6";
+}
+.icon-bolt:before {
+  content: "\f0e7";
+}
+.icon-sitemap:before {
+  content: "\f0e8";
+}
+.icon-umbrella:before {
+  content: "\f0e9";
+}
+.icon-paste:before {
+  content: "\f0ea";
+}
+.icon-lightbulb:before {
+  content: "\f0eb";
+}
+.icon-exchange:before {
+  content: "\f0ec";
+}
+.icon-cloud-download:before {
+  content: "\f0ed";
+}
+.icon-cloud-upload:before {
+  content: "\f0ee";
+}
+.icon-user-md:before {
+  content: "\f0f0";
+}
+.icon-stethoscope:before {
+  content: "\f0f1";
+}
+.icon-suitcase:before {
+  content: "\f0f2";
+}
+.icon-bell-alt:before {
+  content: "\f0f3";
+}
+.icon-coffee:before {
+  content: "\f0f4";
+}
+.icon-food:before {
+  content: "\f0f5";
+}
+.icon-file-text-alt:before {
+  content: "\f0f6";
+}
+.icon-building:before {
+  content: "\f0f7";
+}
+.icon-hospital:before {
+  content: "\f0f8";
+}
+.icon-ambulance:before {
+  content: "\f0f9";
+}
+.icon-medkit:before {
+  content: "\f0fa";
+}
+.icon-fighter-jet:before {
+  content: "\f0fb";
+}
+.icon-beer:before {
+  content: "\f0fc";
+}
+.icon-h-sign:before {
+  content: "\f0fd";
+}
+.icon-plus-sign-alt:before {
+  content: "\f0fe";
+}
+.icon-double-angle-left:before {
+  content: "\f100";
+}
+.icon-double-angle-right:before {
+  content: "\f101";
+}
+.icon-double-angle-up:before {
+  content: "\f102";
+}
+.icon-double-angle-down:before {
+  content: "\f103";
+}
+.icon-angle-left:before {
+  content: "\f104";
+}
+.icon-angle-right:before {
+  content: "\f105";
+}
+.icon-angle-up:before {
+  content: "\f106";
+}
+.icon-angle-down:before {
+  content: "\f107";
+}
+.icon-desktop:before {
+  content: "\f108";
+}
+.icon-laptop:before {
+  content: "\f109";
+}
+.icon-tablet:before {
+  content: "\f10a";
+}
+.icon-mobile-phone:before {
+  content: "\f10b";
+}
+.icon-circle-blank:before {
+  content: "\f10c";
+}
+.icon-quote-left:before {
+  content: "\f10d";
+}
+.icon-quote-right:before {
+  content: "\f10e";
+}
+.icon-spinner:before {
+  content: "\f110";
+}
+.icon-circle:before {
+  content: "\f111";
+}
+.icon-mail-reply:before,
+.icon-reply:before {
+  content: "\f112";
+}
+.icon-github-alt:before {
+  content: "\f113";
+}
+.icon-folder-close-alt:before {
+  content: "\f114";
+}
+.icon-folder-open-alt:before {
+  content: "\f115";
+}
+.icon-expand-alt:before {
+  content: "\f116";
+}
+.icon-collapse-alt:before {
+  content: "\f117";
+}
+.icon-smile:before {
+  content: "\f118";
+}
+.icon-frown:before {
+  content: "\f119";
+}
+.icon-meh:before {
+  content: "\f11a";
+}
+.icon-gamepad:before {
+  content: "\f11b";
+}
+.icon-keyboard:before {
+  content: "\f11c";
+}
+.icon-flag-alt:before {
+  content: "\f11d";
+}
+.icon-flag-checkered:before {
+  content: "\f11e";
+}
+.icon-terminal:before {
+  content: "\f120";
+}
+.icon-code:before {
+  content: "\f121";
+}
+.icon-reply-all:before {
+  content: "\f122";
+}
+.icon-mail-reply-all:before {
+  content: "\f122";
+}
+.icon-star-half-full:before,
+.icon-star-half-empty:before {
+  content: "\f123";
+}
+.icon-location-arrow:before {
+  content: "\f124";
+}
+.icon-crop:before {
+  content: "\f125";
+}
+.icon-code-fork:before {
+  content: "\f126";
+}
+.icon-unlink:before {
+  content: "\f127";
+}
+.icon-question:before {
+  content: "\f128";
+}
+.icon-info:before {
+  content: "\f129";
+}
+.icon-exclamation:before {
+  content: "\f12a";
+}
+.icon-superscript:before {
+  content: "\f12b";
+}
+.icon-subscript:before {
+  content: "\f12c";
+}
+.icon-eraser:before {
+  content: "\f12d";
+}
+.icon-puzzle-piece:before {
+  content: "\f12e";
+}
+.icon-microphone:before {
+  content: "\f130";
+}
+.icon-microphone-off:before {
+  content: "\f131";
+}
+.icon-shield:before {
+  content: "\f132";
+}
+.icon-calendar-empty:before {
+  content: "\f133";
+}
+.icon-fire-extinguisher:before {
+  content: "\f134";
+}
+.icon-rocket:before {
+  content: "\f135";
+}
+.icon-maxcdn:before {
+  content: "\f136";
+}
+.icon-chevron-sign-left:before {
+  content: "\f137";
+}
+.icon-chevron-sign-right:before {
+  content: "\f138";
+}
+.icon-chevron-sign-up:before {
+  content: "\f139";
+}
+.icon-chevron-sign-down:before {
+  content: "\f13a";
+}
+.icon-html5:before {
+  content: "\f13b";
+}
+.icon-css3:before {
+  content: "\f13c";
+}
+.icon-anchor:before {
+  content: "\f13d";
+}
+.icon-unlock-alt:before {
+  content: "\f13e";
+}
+.icon-bullseye:before {
+  content: "\f140";
+}
+.icon-ellipsis-horizontal:before {
+  content: "\f141";
+}
+.icon-ellipsis-vertical:before {
+  content: "\f142";
+}
+.icon-rss-sign:before {
+  content: "\f143";
+}
+.icon-play-sign:before {
+  content: "\f144";
+}
+.icon-ticket:before {
+  content: "\f145";
+}
+.icon-minus-sign-alt:before {
+  content: "\f146";
+}
+.icon-check-minus:before {
+  content: "\f147";
+}
+.icon-level-up:before {
+  content: "\f148";
+}
+.icon-level-down:before {
+  content: "\f149";
+}
+.icon-check-sign:before {
+  content: "\f14a";
+}
+.icon-edit-sign:before {
+  content: "\f14b";
+}
+.icon-external-link-sign:before {
+  content: "\f14c";
+}
+.icon-share-sign:before {
+  content: "\f14d";
+}
+.icon-compass:before {
+  content: "\f14e";
+}
+.icon-collapse:before {
+  content: "\f150";
+}
+.icon-collapse-top:before {
+  content: "\f151";
+}
+.icon-expand:before {
+  content: "\f152";
+}
+.icon-euro:before,
+.icon-eur:before {
+  content: "\f153";
+}
+.icon-gbp:before {
+  content: "\f154";
+}
+.icon-dollar:before,
+.icon-usd:before {
+  content: "\f155";
+}
+.icon-rupee:before,
+.icon-inr:before {
+  content: "\f156";
+}
+.icon-yen:before,
+.icon-jpy:before {
+  content: "\f157";
+}
+.icon-renminbi:before,
+.icon-cny:before {
+  content: "\f158";
+}
+.icon-won:before,
+.icon-krw:before {
+  content: "\f159";
+}
+.icon-bitcoin:before,
+.icon-btc:before {
+  content: "\f15a";
+}
+.icon-file:before {
+  content: "\f15b";
+}
+.icon-file-text:before {
+  content: "\f15c";
+}
+.icon-sort-by-alphabet:before {
+  content: "\f15d";
+}
+.icon-sort-by-alphabet-alt:before {
+  content: "\f15e";
+}
+.icon-sort-by-attributes:before {
+  content: "\f160";
+}
+.icon-sort-by-attributes-alt:before {
+  content: "\f161";
+}
+.icon-sort-by-order:before {
+  content: "\f162";
+}
+.icon-sort-by-order-alt:before {
+  content: "\f163";
+}
+.icon-thumbs-up:before {
+  content: "\f164";
+}
+.icon-thumbs-down:before {
+  content: "\f165";
+}
+.icon-youtube-sign:before {
+  content: "\f166";
+}
+.icon-youtube:before {
+  content: "\f167";
+}
+.icon-xing:before {
+  content: "\f168";
+}
+.icon-xing-sign:before {
+  content: "\f169";
+}
+.icon-youtube-play:before {
+  content: "\f16a";
+}
+.icon-dropbox:before {
+  content: "\f16b";
+}
+.icon-stackexchange:before {
+  content: "\f16c";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-flickr:before {
+  content: "\f16e";
+}
+.icon-adn:before {
+  content: "\f170";
+}
+.icon-bitbucket:before {
+  content: "\f171";
+}
+.icon-bitbucket-sign:before {
+  content: "\f172";
+}
+.icon-tumblr:before {
+  content: "\f173";
+}
+.icon-tumblr-sign:before {
+  content: "\f174";
+}
+.icon-long-arrow-down:before {
+  content: "\f175";
+}
+.icon-long-arrow-up:before {
+  content: "\f176";
+}
+.icon-long-arrow-left:before {
+  content: "\f177";
+}
+.icon-long-arrow-right:before {
+  content: "\f178";
+}
+.icon-apple:before {
+  content: "\f179";
+}
+.icon-windows:before {
+  content: "\f17a";
+}
+.icon-android:before {
+  content: "\f17b";
+}
+.icon-linux:before {
+  content: "\f17c";
+}
+.icon-dribbble:before {
+  content: "\f17d";
+}
+.icon-skype:before {
+  content: "\f17e";
+}
+.icon-foursquare:before {
+  content: "\f180";
+}
+.icon-trello:before {
+  content: "\f181";
+}
+.icon-female:before {
+  content: "\f182";
+}
+.icon-male:before {
+  content: "\f183";
+}
+.icon-gittip:before {
+  content: "\f184";
+}
+.icon-sun:before {
+  content: "\f185";
+}
+.icon-moon:before {
+  content: "\f186";
+}
+.icon-archive:before {
+  content: "\f187";
+}
+.icon-bug:before {
+  content: "\f188";
+}
+.icon-vk:before {
+  content: "\f189";
+}
+.icon-weibo:before {
+  content: "\f18a";
+}
+.icon-renren:before {
+  content: "\f18b";
+}
+
+#shell {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+
+  border: 1px solid #CCC;
+  border-right: 0;
+  border-bottom: 0;
+  padding: 10px 5px;
+  background: #FFF;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+  display: none;
+}
+
+#shell h2, #shell h2 a:link, #shell h2 a:visited,
+#shell h2 a:hover, #shell h2 a:active {
+  font-weight: normal;
+  margin: 0 0 1em 0;
+  text-align: center;
+  color: #000;
+}
+
+.sympy-live-output {
+  width: 600px;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.sympy-live-toolbar button {
+  margin-left: 0;
+}
+
+#toggleShell {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  color: #FFF;
+  padding: 0.25em;
+  background-color: #3B5526;
+  border: 0;
+  box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.2);
+}
+
+#toggleShell.shown {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sympy-live-completions-toolbar #sympy-live-completions-toggle {
+  display: none;
+}
+
+.sympy-live-completions-toolbar {
+  width: 7%;
+}
+
+.sympy-live-completions-toolbar button {
+  width: 50%;
+}
+
+.sympy-live-completions {
+  padding-left: 10px;
+  line-height: 30px;
+  margin: 0;
+}
+
+
+
+#settings {
+  border-top: 1px solid #222;
+  margin-top: 1em;
+}
+
+#settings h3 {
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+}
+
+#settings h3 div.arrow:before, #toggleShell div.arrow:before {
+  font-family: FontAwesome;
+  content: "\f062";
+}
+
+#settings h3 div.arrow, #toggleShell div.arrow {
+  display: inline-block;
+}
+
+#settings h3 div.arrow {
+  margin-right: 6px;
+  -webkit-transform: rotate(180deg) translate(0px, 0px);
+  -moz-transform: rotate(180deg) translate(0px, 0px);
+  -o-transform: rotate(180deg) translate(0px, 0px);
+  -ms-transform: rotate(180deg) translate(0px, 0px);
+  transform: rotate(180deg) translate(0px, 0px);
+}
+
+#settings.shown h3 div.arrow {
+  -webkit-transform: rotate(0deg) translate(0px, 0px);
+  -moz-transform: rotate(0deg) translate(0px, 0px);
+  -o-transform: rotate(0deg) translate(0px, 0px);
+  -ms-transform: rotate(0deg) translate(0px, 0px);
+  transform: rotate(0deg) translate(0px, 0px);
+}
+
+#toggleShell div.arrow {
+  -webkit-transform: rotate(-45deg) translate(0px, 0px);
+  -moz-transform: rotate(-45deg) translate(0px, 0px);
+  -o-transform: rotate(-45deg) translate(0px, 0px);
+  -ms-transform: rotate(-45deg) translate(0px, 0px);
+  transform: rotate(-45deg) translate(0px, 0px);
+}
+
+#toggleShell.shown div.arrow {
+  -webkit-transform: rotate(135deg) translate(0px, 0px);
+  -moz-transform: rotate(135deg) translate(0px, 0px);
+  -o-transform: rotate(135deg) translate(0px, 0px);
+  -ms-transform: rotate(135deg) translate(0px, 0px);
+  transform: rotate(135deg) translate(0px, 0px);
+}
+
+#settings .content {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  height: 0;
+}
+
+#settings.shown .content {
+  opacity: 1;
+  display: block;
+}
+
+
+
+.live-sphinx-dock-right #shell {
+  position: fixed;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.live-sphinx-dock-right .body {
+  margin-right: 610px;
+}
+
+.live-sphinx-dock-right .bodywrapper {
+  margin-right: 0;
+}
+
+
+.live-sphinx-dock-right .related .right:first-child {
+  margin-right: 620px !important;
+}
+
+
+
+.sympy-live-eval-toolbar {
+  font-family: Arial;
+  font-size: 13px;
+  border-radius: 5px 5px 0 0;
+  background-color: #3B5526;
+  display: inline-block;
+  margin-bottom: -1px;
+}
+
+.sympy-live-eval-button {
+  color: #FFF;
+  border: 0;
+  background-color: transparent;
+  padding: 0.25em;
+  height: 25px;
+  line-height: 20px;
+  display: block;
+}
+
+pre {
+  margin: 0;
+}
+
+.sympy-live-eval-button:hover {
+  color: #81B953;
+  text-decoration: underline;
+}
+
+.live-statement:hover {
+  background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+
+
+#shell button, .sympy-live-dialog button {
+  font-family: inherit;
+  background: #370C19;
+  color: #FFF;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  cursor: pointer;
+  border-radius: 0;
+  border: 0;
+}
+
+#shell button.disabled {
+  cursor: default;
+}
+
+#shell button:hover, .sympy-live-dialog button:hover {
+  background: #552634;
+}
+
+#shell textarea, .sympy-live-dialog textarea {
+  border: 1px solid #CCC;
+}
+
+#shell select {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#shell input, #shell textarea {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+#shell #make-one-off-button {
+  background-image: url("https://live.sympy.org/static/sympy-live/images/make_url.png");
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-size: 100%;
+}
+
+#shell #make-one-off-button:hover {
+  background-color: #AAA;
+}
+
+.scrolled {
+  box-shadow: 0 0 10px #293b1b;
+}
+
+.transition {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}</style><style class="darkreader darkreader--sync" media="screen"></style>
+    
+    <script id="documentation_options" data-url_root="../" src="./mbol_files/documentation_options.js"></script>
+    <script src="./mbol_files/jquery.js"></script>
+    <script src="./mbol_files/underscore.js"></script>
+    <script src="./mbol_files/doctools.js"></script>
+    <script src="./mbol_files/language_data.js"></script>
+    <script src="./mbol_files/utilities.js"></script>
+    <script src="./mbol_files/classy.js"></script>
+    <script src="./mbol_files/live-core.js"></script>
+    <script src="./mbol_files/live-autocomplete.js"></script>
+    <script src="./mbol_files/live-sphinx.js"></script>
+    <script async="async" src="./mbol_files/latest.js"></script>
+    <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+    
+    <link rel="shortcut icon" href="https://docs.sympy.org/latest/_static/sympy-notailtext-favicon.ico">
+    <link href="https://docs.sympy.org/latest/tutorial/intro.html" rel="canonical">
+    
+    <link rel="index" title="Index" href="https://docs.sympy.org/latest/genindex.html">
+    <link rel="search" title="Search" href="https://docs.sympy.org/latest/search.html">
+    <link rel="next" title="Gotchas" href="https://docs.sympy.org/latest/tutorial/gotchas.html">
+    <link rel="prev" title="Preliminaries" href="https://docs.sympy.org/latest/tutorial/preliminaries.html"> 
+  <script type="text/javascript" async="" src="./mbol_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style class="darkreader darkreader--sync" media="screen"></style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style class="darkreader darkreader--sync" media="screen"></style><meta name="darkreader" content="90e50367e12a44d7873771e62b839689"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #765e1f !important;
+    border-color: #c2a84a !important;
+    color: #e1d7bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}</style></head><body class=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://docs.sympy.org/latest/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/tutorial/gotchas.html" title="Gotchas" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/tutorial/preliminaries.html" title="Preliminaries" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="https://docs.sympy.org/latest/index.html">SymPy 1.7.1 documentation</a> »</li>
+          <li class="nav-item nav-item-1"><a href="https://docs.sympy.org/latest/tutorial/index.html" accesskey="U">SymPy Tutorial</a> »</li>
+        <li class="nav-item nav-item-this"><a href="https://docs.sympy.org/latest/tutorial/intro.html">Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="https://docs.sympy.org/latest/tutorial/intro.html#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-symbolic-computation">
+<h2>What is Symbolic Computation?<a class="headerlink" href="https://docs.sympy.org/latest/tutorial/intro.html#what-is-symbolic-computation" title="Permalink to this headline">¶</a></h2>
+<p>Symbolic computation deals with the computation of mathematical objects
+symbolically.  This means that the mathematical objects are represented
+exactly, not approximately, and mathematical expressions with unevaluated
+variables are left in symbolic form.</p>
+<p>Let’s take an example. Say we wanted to use the built-in Python functions to
+compute square roots. We might do something like this</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</div><div><span class="go">3.0</span>
+</div></pre></div>
+</div>
+<p>9 is a perfect square, so we got the exact answer, 3. But suppose we computed
+the square root of a number that isn’t a perfect square</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</div><div><span class="go">2.82842712475</span>
+</div></pre></div>
+</div>
+<p>Here we got an approximate result. 2.82842712475 is not the exact square root
+of 8 (indeed, the actual square root of 8 cannot be represented by a finite
+decimal, since it is an irrational number).  If all we cared about was the
+decimal form of the square root of 8, we would be done.</p>
+<p>But suppose we want to go further. Recall that <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msqrt&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/msqrt&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x22C5;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msqrt&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;msqrt&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msqrt&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 10.134em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.168em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.565em, 1008.17em, 2.825em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="msqrt" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 1.263em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.46em, 4.136em, -999.997em); top: -3.979em; left: 0.759em;"><span class="mrow" id="MathJax-Span-4"><span class="mn" id="MathJax-Span-5" style="font-family: STIXGeneral-Regular;">8</span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.027em, 1000.51em, 3.38em, -999.997em); top: -3.979em; left: 0.759em;"><span style="font-family: STIXGeneral-Regular;">‾</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(2.876em, 1000.76em, 4.136em, -999.997em); top: -3.879em; left: 0em;"><span style="font-family: STIXVariants;">√</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="msqrt" id="MathJax-Span-7" style="padding-left: 0.305em;"><span style="display: inline-block; position: relative; width: 2.573em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1001.77em, 4.136em, -999.997em); top: -3.979em; left: 0.759em;"><span class="mrow" id="MathJax-Span-8"><span class="mn" id="MathJax-Span-9" style="font-family: STIXGeneral-Regular;">4</span><span class="mo" id="MathJax-Span-10" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">⋅</span><span class="mn" id="MathJax-Span-11" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.027em, 1001.82em, 3.38em, -999.997em); top: -3.979em; left: 0.759em;"><span style="display: inline-block; position: relative; width: 1.817em; height: 0px;"><span style="position: absolute; font-family: STIXGeneral-Regular; top: -3.979em; left: 0em;">‾<span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; font-family: STIXGeneral-Regular; top: -3.979em; left: 1.313em;">‾<span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -3.979em; left: 0.406em;">‾<span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="font-family: STIXGeneral-Regular; position: absolute; top: -3.979em; left: 0.859em;">‾<span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(2.876em, 1000.76em, 4.136em, -999.997em); top: -3.879em; left: 0em;"><span style="font-family: STIXVariants;">√</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="mn" id="MathJax-Span-13" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">2</span><span class="msqrt" id="MathJax-Span-14"><span style="display: inline-block; position: relative; width: 1.263em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.46em, 4.136em, -999.997em); top: -3.979em; left: 0.759em;"><span class="mrow" id="MathJax-Span-15"><span class="mn" id="MathJax-Span-16" style="font-family: STIXGeneral-Regular;">2</span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.027em, 1000.51em, 3.38em, -999.997em); top: -3.979em; left: 0.759em;"><span style="font-family: STIXGeneral-Regular;">‾</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(2.876em, 1000.76em, 4.136em, -999.997em); top: -3.879em; left: 0em;"><span style="font-family: STIXVariants;">√</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>8</mn></msqrt><mo>=</mo><msqrt><mn>4</mn><mo>⋅</mo><mn>2</mn></msqrt><mo>=</mo><mn>2</mn><msqrt><mn>2</mn></msqrt></math></span></span><script type="math/tex" id="MathJax-Element-1">\sqrt{8} = \sqrt{4\cdot 2} =
+2\sqrt{2}</script></span>.  We would have a hard time deducing this from the above result.
+This is where symbolic computation comes in.  With a symbolic computation
+system like SymPy, square roots of numbers that are not perfect squares are
+left unevaluated by default</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sympy</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</div><div><span class="go">sqrt(3)</span>
+</div></pre></div>
+</div>
+<p>Furthermore—and this is where we start to see the real power of symbolic
+computation—symbolic results can be symbolically simplified.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</div><div><span class="go">2*sqrt(2)</span>
+</div></pre></div>
+</div>
+</div>
+<div class="section" id="a-more-interesting-example">
+<h2>A More Interesting Example<a class="headerlink" href="https://docs.sympy.org/latest/tutorial/intro.html#a-more-interesting-example" title="Permalink to this headline">¶</a></h2>
+<p>The above example starts to show how we can manipulate irrational numbers
+exactly using SymPy.  But it is much more powerful than that.  Symbolic
+computation systems (which by the way, are also often called computer algebra
+systems, or just CASs) such as SymPy are capable of computing symbolic
+expressions with variables.</p>
+<p>As we will see later, in SymPy, variables are defined using <code class="docutils literal notranslate"><span class="pre">symbols</span></code>.
+Unlike many symbolic manipulation systems, variables in SymPy must be defined
+before they are used (the reason for this will be discussed in the <a class="reference internal" href="https://docs.sympy.org/latest/tutorial/gotchas.html#tutorial-gotchas-symbols"><span class="std std-ref">next
+section</span></a>).</p>
+<p>Let us define a symbolic expression, representing the mathematical expression
+<span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-17" style="width: 3.38em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.724em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1002.72em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-18"><span class="mi" id="MathJax-Span-19" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-20" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="mn" id="MathJax-Span-21" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mi" id="MathJax-Span-22" style="font-family: STIXGeneral-Italic;">𝑦</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">x + 2y</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x y'</span><span class="p">)</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span>
+</div><div><span class="go">x + 2*y</span>
+</div></pre></div>
+</div>
+<p>Note that we wrote <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2*y</span></code> just as we would if <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> were
+ordinary Python variables. But in this case, instead of evaluating to
+something, the expression remains as just <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2*y</span></code>.  Now let us play around
+with it:</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">+</span> <span class="mi">1</span>
+</div><div><span class="go">x + 2*y + 1</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">-</span> <span class="n">x</span>
+</div><div><span class="go">2*y</span>
+</div></pre></div>
+</div>
+<p>Notice something in the above example.  When we typed <code class="docutils literal notranslate"><span class="pre">expr</span> <span class="pre">-</span> <span class="pre">x</span></code>, we did not
+get <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2*y</span> <span class="pre">-</span> <span class="pre">x</span></code>, but rather just <code class="docutils literal notranslate"><span class="pre">2*y</span></code>.  The <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">-x</span></code>
+automatically canceled one another.  This is similar to how <code class="docutils literal notranslate"><span class="pre">sqrt(8)</span></code>
+automatically turned into <code class="docutils literal notranslate"><span class="pre">2*sqrt(2)</span></code> above.  This isn’t always the case in
+SymPy, however:</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">*</span><span class="n">expr</span>
+</div><div><span class="go">x*(x + 2*y)</span>
+</div></pre></div>
+</div>
+<p>Here, we might have expected <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-23" style="width: 4.942em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.984em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1003.93em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-24"><span class="mi" id="MathJax-Span-25" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-26" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-27" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-28" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="mn" id="MathJax-Span-29" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mi" id="MathJax-Span-30" style="font-family: STIXGeneral-Italic;">𝑦</span><span class="mo" id="MathJax-Span-31" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-3">x(x + 2y)</script></span> to transform into <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-32" style="width: 4.589em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.682em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.515em, 1003.68em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-33"><span class="msubsup" id="MathJax-Span-34"><span style="display: inline-block; position: relative; width: 0.96em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-35" style="font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.557em;"><span class="mn" id="MathJax-Span-36" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-37" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="mn" id="MathJax-Span-38" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mi" id="MathJax-Span-39" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mi" id="MathJax-Span-40" style="font-family: STIXGeneral-Italic;">𝑦</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.378em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">x^2 + 2xy</script></span>, but
+instead we see that the expression was left alone.  This is a common theme in
+SymPy.  Aside from obvious simplifications like <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-41" style="width: 5.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.085em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1004.09em, 2.825em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-42"><span class="mi" id="MathJax-Span-43" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-44" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">−</span><span class="mi" id="MathJax-Span-45" style="font-family: STIXGeneral-Italic; padding-left: 0.255em;">𝑥</span><span class="mo" id="MathJax-Span-46" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="mn" id="MathJax-Span-47" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.128em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>−</mo><mi>x</mi><mo>=</mo><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-5">x - x = 0</script></span> and <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msqrt&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/msqrt&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;msqrt&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msqrt&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-48" style="width: 5.396em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.337em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.565em, 1004.34em, 2.825em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-49"><span class="msqrt" id="MathJax-Span-50"><span style="display: inline-block; position: relative; width: 1.263em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.46em, 4.136em, -999.997em); top: -3.979em; left: 0.759em;"><span class="mrow" id="MathJax-Span-51"><span class="mn" id="MathJax-Span-52" style="font-family: STIXGeneral-Regular;">8</span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.027em, 1000.51em, 3.38em, -999.997em); top: -3.979em; left: 0.759em;"><span style="font-family: STIXGeneral-Regular;">‾</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(2.876em, 1000.76em, 4.136em, -999.997em); top: -3.879em; left: 0em;"><span style="font-family: STIXVariants;">√</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-53" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="mn" id="MathJax-Span-54" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">2</span><span class="msqrt" id="MathJax-Span-55"><span style="display: inline-block; position: relative; width: 1.263em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.46em, 4.136em, -999.997em); top: -3.979em; left: 0.759em;"><span class="mrow" id="MathJax-Span-56"><span class="mn" id="MathJax-Span-57" style="font-family: STIXGeneral-Regular;">2</span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.027em, 1000.51em, 3.38em, -999.997em); top: -3.979em; left: 0.759em;"><span style="font-family: STIXGeneral-Regular;">‾</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(2.876em, 1000.76em, 4.136em, -999.997em); top: -3.879em; left: 0em;"><span style="font-family: STIXVariants;">√</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>8</mn></msqrt><mo>=</mo><mn>2</mn><msqrt><mn>2</mn></msqrt></math></span></span><script type="math/tex" id="MathJax-Element-6">\sqrt{8} =
+2\sqrt{2}</script></span>, most simplifications are not performed automatically.  This is
+because we might prefer the factored form <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-58" style="width: 4.942em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.984em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1003.93em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-59"><span class="mi" id="MathJax-Span-60" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-61" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-62" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-63" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="mn" id="MathJax-Span-64" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mi" id="MathJax-Span-65" style="font-family: STIXGeneral-Italic;">𝑦</span><span class="mo" id="MathJax-Span-66" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-7">x(x + 2y)</script></span>, or we might prefer the
+expanded form <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-67" style="width: 4.589em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.682em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.515em, 1003.68em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-68"><span class="msubsup" id="MathJax-Span-69"><span style="display: inline-block; position: relative; width: 0.96em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-70" style="font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.557em;"><span class="mn" id="MathJax-Span-71" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-72" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="mn" id="MathJax-Span-73" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mi" id="MathJax-Span-74" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mi" id="MathJax-Span-75" style="font-family: STIXGeneral-Italic;">𝑦</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.378em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-8">x^2 + 2xy</script></span>.  Both forms are useful in different circumstances.
+In SymPy, there are functions to go from one form to the other</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">expand</span><span class="p">,</span> <span class="n">factor</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">expanded_expr</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">expr</span><span class="p">)</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">expanded_expr</span>
+</div><div><span class="go">x**2 + 2*x*y</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">(</span><span class="n">expanded_expr</span><span class="p">)</span>
+</div><div><span class="go">x*(x + 2*y)</span>
+</div></pre></div>
+</div>
+</div>
+<div class="section" id="the-power-of-symbolic-computation">
+<h2>The Power of Symbolic Computation<a class="headerlink" href="https://docs.sympy.org/latest/tutorial/intro.html#the-power-of-symbolic-computation" title="Permalink to this headline">¶</a></h2>
+<p>The real power of a symbolic computation system such as SymPy is the ability
+to do all sorts of computations symbolically.  SymPy can simplify expressions,
+compute derivatives, integrals, and limits, solve equations, work with
+matrices, and much, much more, and do it all symbolically.  It includes
+modules for plotting, printing (like 2D pretty printed output of math
+formulas, or <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;L&lt;/mi&gt;&lt;mspace width=&quot;-.325em&quot; /&gt;&lt;mpadded height=&quot;+.21em&quot; depth=&quot;-.21em&quot; voffset=&quot;+.21em&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mstyle displaystyle=&quot;false&quot; scriptlevel=&quot;1&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;/mpadded&gt;&lt;mspace width=&quot;-.17em&quot; /&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;T&lt;/mi&gt;&lt;mspace width=&quot;-.14em&quot; /&gt;&lt;mpadded height=&quot;-.5ex&quot; depth=&quot;+.5ex&quot; voffset=&quot;-.5ex&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;E&lt;/mi&gt;&lt;/mrow&gt;&lt;/mpadded&gt;&lt;mspace width=&quot;-.115em&quot; /&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-76" style="width: 2.775em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.22em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.666em, 1002.22em, 2.926em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-77"><span class="texatom" id="MathJax-Span-78"><span class="mrow" id="MathJax-Span-79"><span class="mi" id="MathJax-Span-80" style="font-family: STIXGeneral-Regular;">L</span><span class="mspace" id="MathJax-Span-81" style="height: 0em; vertical-align: 0em; margin-left: -0.35em;"></span><span class="mpadded" id="MathJax-Span-82"><span style="display: inline-block; position: relative; width: 0.507em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -4.231em; left: 0em;"><span class="mrow" id="MathJax-Span-83"><span class="texatom" id="MathJax-Span-84"><span class="mrow" id="MathJax-Span-85"><span class="mstyle" id="MathJax-Span-86"><span class="mrow" id="MathJax-Span-87"><span class="texatom" id="MathJax-Span-88"><span class="mrow" id="MathJax-Span-89"><span class="mi" id="MathJax-Span-90" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">A</span></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mspace" id="MathJax-Span-91" style="height: 0em; vertical-align: 0em; margin-left: -0.199em;"></span><span class="mi" id="MathJax-Span-92" style="font-family: STIXGeneral-Regular;">T</span><span class="mspace" id="MathJax-Span-93" style="height: 0em; vertical-align: 0em; margin-left: -0.149em;"></span><span class="mpadded" id="MathJax-Span-94"><span style="display: inline-block; position: relative; width: 0.607em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.61em, 4.136em, -999.997em); top: -3.727em; left: 0em;"><span class="mrow" id="MathJax-Span-95"><span class="texatom" id="MathJax-Span-96"><span class="mrow" id="MathJax-Span-97"><span class="mi" id="MathJax-Span-98" style="font-family: STIXGeneral-Regular;">E</span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mspace" id="MathJax-Span-99" style="height: 0em; vertical-align: 0em; margin-left: -0.149em;"></span><span class="mi" id="MathJax-Span-100" style="font-family: STIXGeneral-Regular;">X</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.372em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi mathvariant="normal">T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi mathvariant="normal">X</mi></mrow></math></span></span><script type="math/tex" id="MathJax-Element-9">\mathrm{\LaTeX}</script></span>), code generation, physics, statistics, combinatorics,
+number theory, geometry, logic, and more. Here is a small sampling of the sort
+of symbolic power SymPy is capable of, to whet your appetite.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x t z nu'</span><span class="p">)</span>
+</div></pre></div>
+</div>
+<p>This will make all further examples pretty print with unicode characters.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</div></pre></div>
+</div>
+<p>Take the derivative of <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-101" style="width: 4.337em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.48em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.666em, 1003.48em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-102"><span class="mi" id="MathJax-Span-103" style="font-family: STIXGeneral-Regular;">sin</span><span class="mo" id="MathJax-Span-104"></span><span class="texatom" id="MathJax-Span-105" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-106"><span class="mo" id="MathJax-Span-107" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-108" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-109" style="font-family: STIXGeneral-Regular;">)</span></span></span><span class="msubsup" id="MathJax-Span-110"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.41em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-111" style="font-family: STIXGeneral-Italic;">𝑒</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.456em;"><span class="mi" id="MathJax-Span-112" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sin</mi><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><msup><mi>e</mi><mi>x</mi></msup></math></span></span><script type="math/tex" id="MathJax-Element-10">\sin{(x)}e^x</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</div><div><span class="go"> x           x</span>
+</div><div><span class="go">ℯ ⋅sin(x) + ℯ ⋅cos(x)</span>
+</div></pre></div>
+</div>
+<p>Compute <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo&gt;&amp;#x222B;&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-113" style="width: 14.166em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.394em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.565em, 1011.34em, 2.976em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-114"><span class="mo" id="MathJax-Span-115" style="font-family: STIXGeneral-Regular; vertical-align: 0.003em;">∫<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.204em;"></span></span><span class="mo" id="MathJax-Span-116" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-117"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.41em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-118" style="font-family: STIXGeneral-Italic;">𝑒</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.456em;"><span class="mi" id="MathJax-Span-119" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mi" id="MathJax-Span-120" style="font-family: STIXGeneral-Regular; padding-left: 0.204em;">sin</span><span class="mo" id="MathJax-Span-121"></span><span class="texatom" id="MathJax-Span-122" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-123"><span class="mo" id="MathJax-Span-124" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-125" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-126" style="font-family: STIXGeneral-Regular;">)</span></span></span><span class="mo" id="MathJax-Span-127" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">+</span><span class="msubsup" id="MathJax-Span-128" style="padding-left: 0.255em;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.41em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-129" style="font-family: STIXGeneral-Italic;">𝑒</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.456em;"><span class="mi" id="MathJax-Span-130" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mi" id="MathJax-Span-131" style="font-family: STIXGeneral-Regular; padding-left: 0.204em;">cos</span><span class="mo" id="MathJax-Span-132"></span><span class="texatom" id="MathJax-Span-133" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-134"><span class="mo" id="MathJax-Span-135" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-136" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-137" style="font-family: STIXGeneral-Regular;">)</span></span></span><span class="mo" id="MathJax-Span-138" style="font-family: STIXGeneral-Regular;">)</span><span class="mspace" id="MathJax-Span-139" style="height: 0em; vertical-align: 0em; width: 0.204em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-140" style="font-family: STIXGeneral-Italic;">𝑑</span><span class="mi" id="MathJax-Span-141" style="font-family: STIXGeneral-Italic;">𝑥</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.434em; border-left: 0px solid; width: 0px; height: 1.566em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∫</mo><mo stretchy="false">(</mo><msup><mi>e</mi><mi>x</mi></msup><mi>sin</mi><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><msup><mi>e</mi><mi>x</mi></msup><mi>cos</mi><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo><mspace width="thinmathspace"></mspace><mi>d</mi><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-11">\int(e^x\sin{(x)} + e^x\cos{(x)})\,dx</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</div><div><span class="go"> x</span>
+</div><div><span class="go">ℯ ⋅sin(x)</span>
+</div></pre></div>
+</div>
+<p>Compute <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msubsup&gt;&lt;mo&gt;&amp;#x222B;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x221E;&lt;/mi&gt;&lt;/mrow&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;&amp;#x221E;&lt;/mi&gt;&lt;/msubsup&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-142" style="width: 7.664em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.152em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.515em, 1006.1em, 3.128em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-143"><span class="msubsup" id="MathJax-Span-144"><span style="display: inline-block; position: relative; width: 1.666em; height: 0px;"><span style="position: absolute; clip: rect(3.027em, 1000.66em, 4.438em, -999.997em); top: -3.979em; left: 0em;"><span class="mo" id="MathJax-Span-145" style="font-family: STIXGeneral-Regular; vertical-align: 0.003em;">∫<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.204em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.531em, 1000.71em, 4.136em, -999.997em); top: -4.534em; left: 0.759em;"><span class="mi" id="MathJax-Span-146" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">∞</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.43em, 1001.21em, 4.236em, -999.997em); top: -3.627em; left: 0.456em;"><span class="texatom" id="MathJax-Span-147"><span class="mrow" id="MathJax-Span-148"><span class="mo" id="MathJax-Span-149" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mi" id="MathJax-Span-150" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">∞</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mi" id="MathJax-Span-151" style="font-family: STIXGeneral-Regular; padding-left: 0.204em;">sin</span><span class="mo" id="MathJax-Span-152"></span><span class="texatom" id="MathJax-Span-153" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-154"><span class="mo" id="MathJax-Span-155" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-156"><span style="display: inline-block; position: relative; width: 0.96em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-157" style="font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.557em;"><span class="mn" id="MathJax-Span-158" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-159" style="font-family: STIXGeneral-Regular;">)</span></span></span><span class="mspace" id="MathJax-Span-160" style="height: 0em; vertical-align: 0em; width: 0.204em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-161" style="font-family: STIXGeneral-Italic;">𝑑</span><span class="mi" id="MathJax-Span-162" style="font-family: STIXGeneral-Italic;">𝑥</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.622em; border-left: 0px solid; width: 0px; height: 1.753em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mo>∫</mo><mrow class="MJX-TeXAtom-ORD"><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mi>sin</mi><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mspace width="thinmathspace"></mspace><mi>d</mi><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-12">\int_{-\infty}^\infty \sin{(x^2)}\,dx</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+</div><div><span class="go">√2⋅√π</span>
+</div><div><span class="go">─────</span>
+</div><div><span class="go">  2</span>
+</div></pre></div>
+</div>
+<p>Find <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;munder&gt;&lt;mo movablelimits=&quot;true&quot; form=&quot;prefix&quot;&gt;lim&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x2192;&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;/munder&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-163" style="width: 6.505em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.244em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.212em, 1005.24em, 2.876em, -999.997em); top: -2.366em; left: 0em;"><span class="mrow" id="MathJax-Span-164"><span class="munderover" id="MathJax-Span-165"><span style="display: inline-block; position: relative; width: 2.825em; height: 0px;"><span style="position: absolute; clip: rect(3.128em, 1001.31em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mo" id="MathJax-Span-166" style="font-family: STIXGeneral-Regular;">lim</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.828em; left: 1.313em;"><span class="texatom" id="MathJax-Span-167"><span class="mrow" id="MathJax-Span-168"><span class="mi" id="MathJax-Span-169" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-170" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">→</span><span class="mn" id="MathJax-Span-171" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">0</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-172" style="padding-left: 0.204em;"><span style="display: inline-block; position: relative; width: 2.019em; height: 0px; margin-right: 0.103em; margin-left: 0.103em;"><span style="position: absolute; clip: rect(3.329em, 1001.87em, 4.236em, -999.997em); top: -4.534em; left: 50%; margin-left: -0.955em;"><span class="mrow" id="MathJax-Span-173"><span class="mi" id="MathJax-Span-174" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">sin</span><span class="mo" id="MathJax-Span-175" style="font-size: 70.7%;"></span><span class="texatom" id="MathJax-Span-176" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-177"><span class="mo" id="MathJax-Span-178" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-179" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-180" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">)</span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.531em, 1000.36em, 4.136em, -999.997em); top: -3.627em; left: 50%; margin-left: -0.199em;"><span class="mi" id="MathJax-Span-181" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(0.859em, 1002.02em, 1.212em, -999.997em); top: -1.258em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.019em; height: 0px; --darkreader-inline-border-top: initial;" data-darkreader-inline-border-top=""></span><span style="display: inline-block; width: 0px; height: 1.061em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.371em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.497em; border-left: 0px solid; width: 0px; height: 1.816em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><munder><mo movablelimits="true" form="prefix">lim</mo><mrow class="MJX-TeXAtom-ORD"><mi>x</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mi>x</mi></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-13">\lim_{x\to 0}\frac{\sin{(x)}}{x}</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</div><div><span class="go">1</span>
+</div></pre></div>
+</div>
+<p>Solve <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-182" style="width: 5.496em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.438em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.515em, 1004.44em, 2.825em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-183"><span class="msubsup" id="MathJax-Span-184"><span style="display: inline-block; position: relative; width: 0.96em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-185" style="font-family: STIXGeneral-Italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.557em;"><span class="mn" id="MathJax-Span-186" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-187" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">−</span><span class="mn" id="MathJax-Span-188" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">2</span><span class="mo" id="MathJax-Span-189" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="mn" id="MathJax-Span-190" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-14">x^2 - 2 = 0</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</div><div><span class="go">[-√2, √2]</span>
+</div></pre></div>
+</div>
+<p>Solve the differential equation <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2033;&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-191" style="width: 5.9em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.74em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.615em, 1004.74em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-192"><span class="msup" id="MathJax-Span-193"><span style="display: inline-block; position: relative; width: 1.011em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.337em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-194" style="font-family: STIXGeneral-Italic;">𝑦</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.507em;"><span class="mo" id="MathJax-Span-195" style="font-size: 70.7%; font-family: STIXVariants;">″</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-196" style="font-family: STIXGeneral-Regular; padding-left: 0.255em;">−</span><span class="mi" id="MathJax-Span-197" style="font-family: STIXGeneral-Italic; padding-left: 0.255em;">𝑦</span><span class="mo" id="MathJax-Span-198" style="font-family: STIXGeneral-Regular; padding-left: 0.305em;">=</span><span class="msubsup" id="MathJax-Span-199" style="padding-left: 0.305em;"><span style="display: inline-block; position: relative; width: 0.759em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.41em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-200" style="font-family: STIXGeneral-Italic;">𝑒</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 0.456em;"><span class="mi" id="MathJax-Span-201" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝑡</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>y</mi><mo>″</mo></msup><mo>−</mo><mi>y</mi><mo>=</mo><msup><mi>e</mi><mi>t</mi></msup></math></span></span><script type="math/tex" id="MathJax-Element-15">y'' - y = e^t</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+</div><div class="live-statement"><span class="gp">&gt;&gt;&gt; </span><span class="n">dsolve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">exp</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span> <span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</div><div><span class="go">           -t   ⎛     t⎞  t</span>
+</div><div><span class="go">y(t) = C₂⋅ℯ   + ⎜C₁ + ─⎟⋅ℯ</span>
+</div><div><span class="go">                ⎝     2⎠</span>
+</div></pre></div>
+</div>
+<p>Find the eigenvalues of <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mstyle scriptlevel=&quot;1&quot;&gt;&lt;mtable rowspacing=&quot;.2em&quot; columnspacing=&quot;0.333em&quot; displaystyle=&quot;false&quot;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;/mstyle&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-202" style="width: 2.623em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.119em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.968em, 1001.92em, 3.531em, -999.997em); top: -2.971em; left: 0em;"><span class="mrow" id="MathJax-Span-203"><span class="mrow" id="MathJax-Span-204"><span class="mo" id="MathJax-Span-205" style="vertical-align: -0.199em;"><span style="font-family: STIXSizeOneSym;">[</span></span><span class="mstyle" id="MathJax-Span-206"><span class="mrow" id="MathJax-Span-207"><span class="mtable" id="MathJax-Span-208"><span style="display: inline-block; position: relative; width: 1.061em; height: 0px; margin-right: 0.154em; margin-left: 0.154em;"><span style="position: absolute; clip: rect(3.077em, 1000.36em, 4.539em, -999.997em); top: -3.979em; left: 0em;"><span style="display: inline-block; position: relative; width: 0.355em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.3em, 4.136em, -999.997em); top: -4.282em; left: 50%; margin-left: -0.199em;"><span class="mtd" id="MathJax-Span-209"><span class="mrow" id="MathJax-Span-210"><span class="mn" id="MathJax-Span-211" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.38em, 1000.36em, 4.136em, -999.997em); top: -3.576em; left: 50%; margin-left: -0.199em;"><span class="mtd" id="MathJax-Span-215"><span class="mrow" id="MathJax-Span-216"><span class="mn" id="MathJax-Span-217" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.077em, 1000.36em, 4.539em, -999.997em); top: -3.979em; left: 0.708em;"><span style="display: inline-block; position: relative; width: 0.355em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.36em, 4.136em, -999.997em); top: -4.282em; left: 50%; margin-left: -0.199em;"><span class="mtd" id="MathJax-Span-212"><span class="mrow" id="MathJax-Span-213"><span class="mn" id="MathJax-Span-214" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.38em, 1000.36em, 4.136em, -999.997em); top: -3.576em; left: 50%; margin-left: -0.199em;"><span class="mtd" id="MathJax-Span-218"><span class="mrow" id="MathJax-Span-219"><span class="mn" id="MathJax-Span-220" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-221" style="vertical-align: -0.199em;"><span style="font-family: STIXSizeOneSym;">]</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.976em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.559em; border-left: 0px solid; width: 0px; height: 1.691em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>[</mo><mstyle scriptlevel="1"><mtable rowspacing=".2em" columnspacing="0.333em" displaystyle="false"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd></mtr></mtable></mstyle><mo>]</mo></mrow></math></span></span><script type="math/tex" id="MathJax-Element-16">\left[\begin{smallmatrix}1 & 2\\2 &
+2\end{smallmatrix}\right]</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span><span class="o">.</span><span class="n">eigenvals</span><span class="p">()</span>
+</div><div><span class="go">⎧3   √17     3   √17   ⎫</span>
+</div><div><span class="go">⎨─ - ───: 1, ─ + ───: 1⎬</span>
+</div><div><span class="go">⎩2    2      2    2    ⎭</span>
+</div></pre></div>
+</div>
+<p>Rewrite the Bessel function <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;J&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;&amp;#x03BD;&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-222" style="width: 2.876em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.321em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1002.27em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-223"><span class="msubsup" id="MathJax-Span-224"><span style="display: inline-block; position: relative; width: 0.96em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.61em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-225" style="font-family: STIXGeneral-Italic;">𝐽<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.103em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.828em; left: 0.557em;"><span class="texatom" id="MathJax-Span-226"><span class="mrow" id="MathJax-Span-227"><span class="mi" id="MathJax-Span-228" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝜈<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mrow" id="MathJax-Span-229" style="padding-left: 0.204em;"><span class="mo" id="MathJax-Span-230" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-231" style="font-family: STIXGeneral-Italic;">𝑧</span><span class="mo" id="MathJax-Span-232" style="font-family: STIXGeneral-Regular;">)</span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>J</mi><mrow class="MJX-TeXAtom-ORD"><mi>ν</mi></mrow></msub><mrow><mo>(</mo><mi>z</mi><mo>)</mo></mrow></math></span></span><script type="math/tex" id="MathJax-Element-17">J_{\nu}\left(z\right)</script></span> in terms of the
+spherical Bessel function <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;&amp;#x03BD;&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-233" style="width: 2.472em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.968em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.716em, 1001.92em, 2.876em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-234"><span class="msubsup" id="MathJax-Span-235"><span style="display: inline-block; position: relative; width: 0.809em; height: 0px;"><span style="position: absolute; clip: rect(3.228em, 1000.36em, 4.337em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-236" style="font-family: STIXGeneral-Italic;">𝑗</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.828em; left: 0.406em;"><span class="mi" id="MathJax-Span-237" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝜈<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-238" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-239" style="font-family: STIXGeneral-Italic;">𝑧</span><span class="mo" id="MathJax-Span-240" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.191em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>j</mi><mi>ν</mi></msub><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-18">j_\nu(z)</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">besselj</span><span class="p">(</span><span class="n">nu</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">rewrite</span><span class="p">(</span><span class="n">jn</span><span class="p">)</span>
+</div><div><span class="go">√2⋅√z⋅jn(ν - 1/2, z)</span>
+</div><div><span class="go">────────────────────</span>
+</div><div><span class="go">         √π</span>
+</div></pre></div>
+</div>
+<p>Print <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msubsup&gt;&lt;mo&gt;&amp;#x222B;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;&amp;#x03C0;&lt;/mi&gt;&lt;/mrow&gt;&lt;/msubsup&gt;&lt;msup&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2061;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;mspace width=&quot;thinmathspace&quot; /&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-241" style="width: 7.311em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.9em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.515em, 1005.85em, 3.027em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-242"><span class="msubsup" id="MathJax-Span-243"><span style="display: inline-block; position: relative; width: 1.212em; height: 0px;"><span style="position: absolute; clip: rect(3.027em, 1000.66em, 4.438em, -999.997em); top: -3.979em; left: 0em;"><span class="mo" id="MathJax-Span-244" style="font-family: STIXGeneral-Regular; vertical-align: 0.003em;">∫<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.204em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.531em, 1000.46em, 4.136em, -999.997em); top: -4.534em; left: 0.759em;"><span class="texatom" id="MathJax-Span-245"><span class="mrow" id="MathJax-Span-246"><span class="mi" id="MathJax-Span-247" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">𝜋<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; clip: rect(3.38em, 1000.46em, 4.136em, -999.997em); top: -3.627em; left: 0.456em;"><span class="texatom" id="MathJax-Span-248"><span class="mrow" id="MathJax-Span-249"><span class="mn" id="MathJax-Span-250" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">0</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-251" style="padding-left: 0.204em;"><span style="display: inline-block; position: relative; width: 1.767em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1001.31em, 4.136em, -999.997em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-252" style="font-family: STIXGeneral-Regular;">cos</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.332em; left: 1.313em;"><span class="texatom" id="MathJax-Span-253"><span class="mrow" id="MathJax-Span-254"><span class="mn" id="MathJax-Span-255" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-256"></span><span class="texatom" id="MathJax-Span-257" style="padding-left: 0.204em;"><span class="mrow" id="MathJax-Span-258"><span class="mrow" id="MathJax-Span-259"><span class="mo" id="MathJax-Span-260" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-261" style="font-family: STIXGeneral-Italic;">𝑥</span><span class="mo" id="MathJax-Span-262" style="font-family: STIXGeneral-Regular;">)</span></span></span></span><span class="mspace" id="MathJax-Span-263" style="height: 0em; vertical-align: 0em; width: 0.204em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-264" style="font-family: STIXGeneral-Italic;">𝑑</span><span class="mi" id="MathJax-Span-265" style="font-family: STIXGeneral-Italic;">𝑥</span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.497em; border-left: 0px solid; width: 0px; height: 1.628em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mo>∫</mo><mrow class="MJX-TeXAtom-ORD"><mn>0</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>π</mi></mrow></msubsup><msup><mi>cos</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup><mo>⁡</mo><mrow class="MJX-TeXAtom-ORD"><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mspace width="thinmathspace"></mspace><mi>d</mi><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">\int_{0}^{\pi} \cos^{2}{\left (x \right )}\, dx</script></span> using <span class="math notranslate nohighlight"><span class="MathJax_Preview" style="color: inherit; --darkreader-inline-color: inherit;" data-darkreader-inline-color=""></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;L&lt;/mi&gt;&lt;mspace width=&quot;-.325em&quot; /&gt;&lt;mpadded height=&quot;+.21em&quot; depth=&quot;-.21em&quot; voffset=&quot;+.21em&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mstyle displaystyle=&quot;false&quot; scriptlevel=&quot;1&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mrow&gt;&lt;/mpadded&gt;&lt;mspace width=&quot;-.17em&quot; /&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;T&lt;/mi&gt;&lt;mspace width=&quot;-.14em&quot; /&gt;&lt;mpadded height=&quot;-.5ex&quot; depth=&quot;+.5ex&quot; voffset=&quot;-.5ex&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;E&lt;/mi&gt;&lt;/mrow&gt;&lt;/mpadded&gt;&lt;mspace width=&quot;-.115em&quot; /&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-266" style="width: 2.775em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.22em; height: 0px; font-size: 124%;"><span style="position: absolute; clip: rect(1.666em, 1002.22em, 2.926em, -999.997em); top: -2.518em; left: 0em;"><span class="mrow" id="MathJax-Span-267"><span class="texatom" id="MathJax-Span-268"><span class="mrow" id="MathJax-Span-269"><span class="mi" id="MathJax-Span-270" style="font-family: STIXGeneral-Regular;">L</span><span class="mspace" id="MathJax-Span-271" style="height: 0em; vertical-align: 0em; margin-left: -0.35em;"></span><span class="mpadded" id="MathJax-Span-272"><span style="display: inline-block; position: relative; width: 0.507em; height: 0px;"><span style="position: absolute; clip: rect(3.38em, 1000.51em, 4.136em, -999.997em); top: -4.231em; left: 0em;"><span class="mrow" id="MathJax-Span-273"><span class="texatom" id="MathJax-Span-274"><span class="mrow" id="MathJax-Span-275"><span class="mstyle" id="MathJax-Span-276"><span class="mrow" id="MathJax-Span-277"><span class="texatom" id="MathJax-Span-278"><span class="mrow" id="MathJax-Span-279"><span class="mi" id="MathJax-Span-280" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">A</span></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mspace" id="MathJax-Span-281" style="height: 0em; vertical-align: 0em; margin-left: -0.199em;"></span><span class="mi" id="MathJax-Span-282" style="font-family: STIXGeneral-Regular;">T</span><span class="mspace" id="MathJax-Span-283" style="height: 0em; vertical-align: 0em; margin-left: -0.149em;"></span><span class="mpadded" id="MathJax-Span-284"><span style="display: inline-block; position: relative; width: 0.607em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.61em, 4.136em, -999.997em); top: -3.727em; left: 0em;"><span class="mrow" id="MathJax-Span-285"><span class="texatom" id="MathJax-Span-286"><span class="mrow" id="MathJax-Span-287"><span class="mi" id="MathJax-Span-288" style="font-family: STIXGeneral-Regular;">E</span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mspace" id="MathJax-Span-289" style="height: 0em; vertical-align: 0em; margin-left: -0.149em;"></span><span class="mi" id="MathJax-Span-290" style="font-family: STIXGeneral-Regular;">X</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.523em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.372em; border-left: 0px solid; width: 0px; height: 1.316em; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-left=""></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">L</mi><mspace width="-.325em"></mspace><mpadded height="+.21em" depth="-.21em" voffset="+.21em"><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="false" scriptlevel="1"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">A</mi></mrow></mstyle></mrow></mpadded><mspace width="-.17em"></mspace><mi mathvariant="normal">T</mi><mspace width="-.14em"></mspace><mpadded height="-.5ex" depth="+.5ex" voffset="-.5ex"><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">E</mi></mrow></mpadded><mspace width="-.115em"></mspace><mi mathvariant="normal">X</mi></mrow></math></span></span><script type="math/tex" id="MathJax-Element-20">\mathrm{\LaTeX}</script></span>.</p>
+<div class="doctest highlight-default notranslate"><div class="sympy-live-eval-toolbar"><button class="sympy-live-eval-button">Run code block in SymPy Live</button></div><div class="highlight"><pre><div class="live-statement"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">latex</span><span class="p">(</span><span class="n">Integral</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="p">)))</span>
+</div><div><span class="go">\int\limits_{0}^{\pi} \cos^{2}{\left(x \right)}\, dx</span>
+</div></pre></div>
+</div>
+</div>
+<div class="section" id="why-sympy">
+<h2>Why SymPy?<a class="headerlink" href="https://docs.sympy.org/latest/tutorial/intro.html#why-sympy" title="Permalink to this headline">¶</a></h2>
+<p>There are many computer algebra systems out there.  <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_computer_algebra_systems">This</a> Wikipedia
+article lists many of them.  What makes SymPy a better choice than the
+alternatives?</p>
+<p>First off, SymPy is completely free. It is open source, and licensed under the
+liberal BSD license, so you can modify the source code and even sell it if you
+want to.  This contrasts with popular commercial systems like Maple or
+Mathematica that cost hundreds of dollars in licenses.</p>
+<p>Second, SymPy uses Python.  Most computer algebra systems invent their own
+language. Not SymPy. SymPy is written entirely in Python, and is executed
+entirely in Python. This means that if you already know Python, it is much
+easier to get started with SymPy, because you already know the syntax (and if
+you don’t know Python, it is really easy to learn).  We already know that
+Python is a well-designed, battle-tested language.  The SymPy developers are
+confident in their abilities in writing mathematical software, but programming
+language design is a completely different thing.  By reusing an existing
+language, we are able to focus on those things that matter: the mathematics.</p>
+<p>Another computer algebra system, Sage also uses Python as its language.  But
+Sage is large, with a download of over a gigabyte.  An advantage of SymPy is
+that it is lightweight.  In addition to being relatively small, it has no
+dependencies other than Python, so it can be used almost anywhere easily.
+Furthermore, the goals of Sage and the goals of SymPy are different.  Sage
+aims to be a full featured system for mathematics, and aims to do so by
+compiling all the major open source mathematical systems together into
+one. When you call some function in Sage, such as <code class="docutils literal notranslate"><span class="pre">integrate</span></code>, it calls out
+to one of the open source packages that it includes.  In fact, SymPy is
+included in Sage.  SymPy on the other hand aims to be an independent system,
+with all the features implemented in SymPy itself.</p>
+<p>A final important feature of SymPy is that it can be used as a library. Many
+computer algebra systems focus on being usable in interactive environments, but
+if you wish to automate or extend them, it is difficult to do.  With SymPy,
+you can just as easily use it in an interactive Python environment or import
+it in your own Python application.  SymPy also provides APIs to make it easy
+to extend it with your own custom functions.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="https://docs.sympy.org/latest/index.html">
+              <img class="logo" src="./mbol_files/sympylogo.png" alt="Logo">
+            </a></p>
+  <h3><a href="https://docs.sympy.org/latest/index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="https://docs.sympy.org/latest/tutorial/intro.html#">Introduction</a><ul>
+<li><a class="reference internal" href="https://docs.sympy.org/latest/tutorial/intro.html#what-is-symbolic-computation">What is Symbolic Computation?</a></li>
+<li><a class="reference internal" href="https://docs.sympy.org/latest/tutorial/intro.html#a-more-interesting-example">A More Interesting Example</a></li>
+<li><a class="reference internal" href="https://docs.sympy.org/latest/tutorial/intro.html#the-power-of-symbolic-computation">The Power of Symbolic Computation</a></li>
+<li><a class="reference internal" href="https://docs.sympy.org/latest/tutorial/intro.html#why-sympy">Why SymPy?</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="https://docs.sympy.org/latest/tutorial/preliminaries.html" title="previous chapter">Preliminaries</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="https://docs.sympy.org/latest/tutorial/gotchas.html" title="next chapter">Gotchas</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="https://docs.sympy.org/latest/_sources/tutorial/intro.rst.txt" rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="https://docs.sympy.org/latest/search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel">
+      <input type="submit" value="Go">
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://docs.sympy.org/latest/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/py-modindex.html" title="Python Module Index">modules</a> |</li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/tutorial/gotchas.html" title="Gotchas">next</a> |</li>
+        <li class="right">
+          <a href="https://docs.sympy.org/latest/tutorial/preliminaries.html" title="Preliminaries">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="https://docs.sympy.org/latest/index.html">SymPy 1.7.1 documentation</a> »</li>
+          <li class="nav-item nav-item-1"><a href="https://docs.sympy.org/latest/tutorial/index.html">SymPy Tutorial</a> »</li>
+        <li class="nav-item nav-item-this"><a href="https://docs.sympy.org/latest/tutorial/intro.html">Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2020 SymPy Development Team.
+      Last updated on Dec 12, 2020.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  
+<div id="shell" style="display: block; width: 0px; height: 0px; opacity: 0;"><h2><a href="https://live.sympy.org/">SymPy Live Shell</a></h2><div class="sympy-live-output" style="height: 0px;"><div>Python console for SymPy 1.5.1 (Python 2.7.12)
+
+These commands were executed:
+&gt;&gt;&gt; from __future__ import division
+&gt;&gt;&gt; from sympy import *
+&gt;&gt;&gt; x, y, z, t = symbols('x y z t')
+&gt;&gt;&gt; k, m, n = symbols('k m n', integer=True)
+&gt;&gt;&gt; f, g, h = symbols('f g h', cls=Function)
+
+</div><div>&gt;&gt;&gt; init_printing(use_unicode=True)</div><div class="">To change the printing method of SymPy Live, use the settings in the menu to the right (below on mobile).
+</div></div><textarea class="sympy-live-caret" rows="4" readonly="readonly">&gt;&gt;&gt;</textarea><textarea class="sympy-live-prompt" rows="4" spellcheck="false" autocorrect="off" autocapitalize="off" readonly=""></textarea><div class="sympy-live-autocompletions-container"><div class="sympy-live-completions-toolbar"><button id="sympy-live-completions-toggle" class="disabled"><i class="icon-caret-down"></i></button><button class="disabled" id="sympy-live-completions-prev"><i class="icon-angle-left"></i></button><button class="disabled" id="sympy-live-completions-next"><i class="icon-angle-right"></i></button></div><ol class="sympy-live-completions" style="height: 30px;"></ol></div><p class="sympy-live-toolbar" id="sympy-live-toolbar-main"><button class="">Evaluate</button><button>Clear</button><button id="fullscreen-button">Go to SymPy Live</button><button id="make-one-off-button" title="Make a URL that evaluates the session history"></button></p><div id="settings"><h3 class="shown"><div class="arrow"></div>Settings</h3><div class="content"><p><div><label for="output-format">Output Format</label><select id="output-format"><option value="repr">Repr</option><option value="str">Str</option><option value="ascii">ASCII</option><option value="unicode">Unicode</option><option value="latex">LaTeX</option></select></div><div><label for="submit-behavior">Submit with</label><select id="submit-behavior"><option value="enter">Enter</option><option value="shift-enter">Shift-Enter</option></select></div><div><label for="privacy">Privacy</label><select id="privacy"><option value="on">On</option><option value="off">Off</option></select></div><div><label for="autocomplete">Complete with</label><select id="autocomplete"><option value="tab">Tab</option><option value="ctrl-space">Ctrl-Space</option></select></div><div><span>Ctrl-Up/Down for history</span></div><div><label for="evalMode">Evaluation Mode:</label><select id="evalMode"><option value="eval">Evaluate</option><option value="copy">Copy</option></select></div><div><label for="dockMode">Dock to Right</label><input id="dockMode" type="checkbox"></div></p></div></div></div><button id="toggleShell" class=""><div class="arrow"></div><span>Show SymPy Live Shell</span></button><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXSizeOneSym, sans-serif; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""></div></div></body></html>

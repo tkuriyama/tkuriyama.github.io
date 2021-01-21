@@ -1,0 +1,430 @@
+.sympy-live-output {
+    font-family: monospace;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.25em;
+    width: 100%;
+    height: 25em;
+    overflow: auto;
+    border: 0;
+    background-color: #f5f5f5;
+}
+
+.sympy-live-output > div {
+    white-space: pre;
+}
+
+.sympy-live-output > div.sympy-live-hidden {
+    visibility: hidden;
+}
+
+.sympy-live-caret {
+    font-family: monospace;
+    font-size: 1em;
+    width: 10%;
+    width: -moz-calc(3em);
+    width: -webkit-calc(3em);
+    width: calc(3em);
+    border: 0;
+    border-top: 1px solid silver;
+    margin: 0;
+    padding: 5px 0 5px 0.25em;
+    margin-right: 0;
+    outline: none;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    resize: none;
+}
+
+.sympy-live-prompt {
+    font-family: monospace;
+    font-size: 1em;
+    width: 90%;
+    width: -moz-calc(100% - 3.25em);
+    width: -webkit-calc(100% - 3.25em);
+    width: calc(100% - 3.25em);
+    border: 0;
+    border-top: 1px solid silver;
+    margin: 0;
+    padding: 5px 0;
+    margin-left: 0;
+    border-left: 0;
+    padding-left: 0;
+    outline: none;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    background-position: top right;
+    background-repeat: no-repeat;
+    resize: none;
+}
+
+.sympy-live-toolbar {
+    margin: 5px 0 0 0;
+    height: 2em;
+}
+
+.sympy-live-toolbar > * {
+  height: 100% !important;
+}
+
+.sympy-live-toolbar > button {
+  line-height: 1;
+  margin-right: 0.5em;
+  padding: 0.5em;
+}
+
+.sympy-live-toolbar > button:first-child {
+  font-weight: bold;
+}
+
+.sympy-live-processing {
+    background-image: url("/static/sympy-live/images/spinner.gif");
+}
+
+.sympy-live-toolbar > button.sympy-live-evaluate-disabled {
+    background-color: #999;
+    color: #000
+}
+
+.sympy-live-fullscreen-popup {
+    background: #000;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    opacity: .8;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sympy-live-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 100px;
+  bottom: 0;
+  background-color: rgba(1,1,1,0.8);
+  z-index: 10001;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+.sympy-live-dialog div {
+  border: 1px solid #81B953;
+  background-color: #FFF;
+  padding: 0.5em;
+}
+
+.sympy-live-dialog div p {
+  margin: 0.25em 0;
+}
+
+.sympy-live-dialog div textarea {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: 300px;
+  font-family: monospace;
+}
+
+.sympy-live-dialog div button {
+  padding: 0.5em;
+}
+
+#make-one-off-button {
+  float: right;
+  background-image: url('/static/sympy-live/images/make_url.png');
+  width: 32px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  height: 32px;
+  background-size: 100%;
+}
+
+#make-one-off-button:hover {
+  background-color: #AAA;
+}
+
+#settings label {
+  display: inline-block;
+  width: 40%;
+}
+
+#settings select {
+  width: 50%;
+  font-size: 0.9em;
+}
+
+#banner {
+  display: none;
+}
+
+.content {
+  padding: 0.1em;
+}
+
+/* Sidebar card-specific styling */
+
+.sidebar_card h3:first-child {
+  cursor: pointer;
+}
+
+.sidebar_card .clickable_top h3:first-child:before {
+  content: "\f077";
+  font-family: FontAwesome;
+  margin-right: 0.5em;
+  color: #DDD;
+  display: inline-block;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.sidebar_card.closed .clickable_top h3:first-child:before {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#user .content {
+  padding: 0;
+}
+
+#saved_searches, #recent_searches {
+  max-height: 10em;
+  overflow-y: auto;
+}
+
+#saved_searches a, #recent_searches a {
+  display: block;
+  width: 100%;
+  margin: 0.1em 0;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  background-color: #EEE;
+}
+
+#saved_searches a pre, #recent_searches a pre {
+  margin: 0 0.5em;
+  overflow: hidden;
+}
+
+.executable {
+  cursor: pointer;
+}
+
+/* Fullscreen styling */
+
+#main h1 {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  min-width: 960px;
+  background: #EEE;
+}
+
+.fullscreen #content {
+  width: 100% !important;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  height: 100%;
+}
+
+.fullscreen .sympy-live-output {
+  width: 100%;
+}
+
+.fullscreen .sympy-live-caret {
+  width: 10%;
+  width: -moz-calc(3em);
+  width: -webkit-calc(3em);
+  width: calc(3em);
+}
+
+.fullscreen .sympy-live-prompt {
+  position: absolute;
+  left: 4.25em;
+  right: 1.25em;
+  width: 90%;
+  width: -moz-calc(100% - 5.5em);
+  width: -webkit-calc(100% - 5.5em);
+  width: calc(100% - 5.5em);
+}
+
+#main.fullscreen h1 {
+  font-weight: 300;
+  font-size: 2em;
+  margin-left: 0.25em;
+  display: block;
+}
+
+.fullscreen .content, .fullscreen .block {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: #DDD;
+}
+
+.fullscreen #shell {
+  height: 100%;
+}
+
+.fullscreen #make-one-off-button {
+  width: 100%;
+  background-size: 32px 32px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+}
+
+
+/* Responsive design */
+
+/* Phones */
+@media screen and (max-device-width: 767px) {
+  header {
+    position: static;
+  }
+
+  #main-navigation {
+    position: absolute;
+  }
+
+  #main {
+    margin-top: 0.5em;
+  }
+
+  #content {
+    padding: 7px 0;
+  }
+
+  .sympy-live-output, .sympy-live-caret, .sympy-live-prompt {
+    font-size: 1em;
+    padding: 0;
+  }
+
+  .sympy-live-output {
+    height: 15em;
+  }
+
+  .sympy-live-caret {
+    width: 2.5em;
+  }
+
+  .sympy-live-prompt {
+    width: -moz-calc(100% - 2.5em - 30px);
+    width: -webkit-calc(100% - 2.5em - 30px);
+    width: calc(100% - 2.5em - 30px);
+  }
+
+  .sympy-live-prompt, .sympy-live-caret {
+    float: left;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .sympy-live-toolbar {
+    margin: 0 0 0.5em 0;
+    height: auto;
+  }
+  
+  .sympy-live-toolbar > * {
+    height: auto !important;
+  }
+
+  #sympy-live-toolbar-history {
+    display: inline-block;
+    width: 30px;
+    height: 5em;
+    font-family: monospace;
+    float: right;
+  }
+
+  #sympy-live-toolbar-history button {
+    margin-left: 0;
+    display: inline;
+    width: 100%;
+    height: 50%;
+  }
+
+  #make-one-off-button {
+    float: none;
+    width: 100%;
+    background-size: 32px 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    height: 32px !important;
+  }
+
+  .sympy-live-dialog {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    bottom: 0;
+    background-color: rgba(1,1,1,0.8);
+  }
+
+  .sympy-live-dialog div {
+    height: 100%;
+  }
+
+  .sympy-live-dialog div textarea {
+    height: 40%;
+  }
+}
+
+/* Force use of small-grid */
+
+@media (min-width: 768px) {
+  .small_span_0 {
+    width: 0;
+    margin: 0;
+  }
+
+  .small_span_1 {
+    width: 14.6%;
+  }
+
+  .small_span_2 {
+    width: 31.3%;
+  }
+
+  .small_span_3 {
+    width: 50%;
+  }
+
+  .small_span_4 {
+    width: 66.6%;
+  }
+
+  .small_span_5 {
+    width: 83.3%;
+  }
+
+  .small_span_6 {
+    width: 100%;
+  }
+}
