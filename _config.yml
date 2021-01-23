@@ -54,3 +54,14 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+collections:
+  tags:
+    output: true
+
+defaults:
+  - scope:
+      path: ''
+      type: 'tags'
+    values:
+      layout: 'tags'

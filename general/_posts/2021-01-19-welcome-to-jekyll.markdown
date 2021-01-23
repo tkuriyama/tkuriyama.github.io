@@ -1,29 +1,14 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Migrating to GitHub Pages"
 date:   2021-01-19 13:20:30 -0500
-categories: jekyll update
+tags:   jekyll
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+Legacy blog: [learning.tarokuriyama.com](https://learning.tarokuriyama.com/)
 
-`YEAR-MONTH-DAY-title.MARKUP`
+After many years of journaling on Blogger, I've migrated to GitHub Pages and Jekyll. The ability to write locally (in my case, with emacs) is much preferable, with all the benefits of using Markdown too. The Jekyll importer didn't work out of the box for my Blogger XML archive, so I've left the legacy blog up for now.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+The instructions on [this page](https://quuxplusone.github.io/blog/2018/08/05/mathjax-in-jekyll/) worked verbatim for setting up MathJax integration.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+For displaying clickable tags on pages, [this page](https://blog.lunarlogic.io/2019/managing-tags-in-jekyll-blog-easily/) was the most helpful, though a few tweaks were required for my setup.
