@@ -255,7 +255,7 @@ Coupon collector problem
 - Expected number of rolls to get the (k+1)st coupon: $$\sum\limits_{j>=0} {(k/M)^j = 1/(1 - k/M) = M/(M-k)}$$
 - Expected number of rolls to get all coupons: $$\sum\limits_{0<k<=M} M/(M-k) = MH_M = \sim MlgM $$
 
-[Linear probing]([Linear probing](https://en.wikipedia.org/wiki/Linear_probing#:~:text=Linear%20probing%20is%20a%20scheme,by%20Gene%20Amdahl%2C%20Elaine%20M._)
+[Linear probing](https://en.wikipedia.org/wiki/Linear_probing#:~:text=Linear%20probing%20is%20a%20scheme,by%20Gene%20Amdahl%2C%20Elaine%20M._)
 
 Mapping
 - how many N words with length N?
