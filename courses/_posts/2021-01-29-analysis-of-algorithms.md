@@ -240,7 +240,7 @@ Pr(root is of rank k)
 
 <hr>
 
-# week 9
+# Week 9: Words and Mappings
 
 Analytical combinatoris approach to birthday problem
 - On average, how many people asked before finding two with same birthday?
