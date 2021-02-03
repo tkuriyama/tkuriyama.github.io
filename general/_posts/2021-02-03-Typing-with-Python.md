@@ -31,9 +31,9 @@ class Code(Enum):
 Status = Status = Union[Code, Tuple[Code, str]]
 ```
 
-... where the lack fo data constructors make the meaning of Status far more ambiguous.
+... where the lack of data constructors make the meaning of Status far more ambiguous.
 
-This is slightly better (with `show` defined a bit like a typeclass definition in Haskell), though it's still possible to construct Status(Code.OK, "some ok message"), which is not intended:
+This is slightly better (with `show` defined a bit like a typeclass definition in Haskell), though it still invites a construction like `Status(Code.OK, "some ok message")`, which is not intended:
 
 ```python
 class Status():
