@@ -97,18 +97,18 @@ scrape_configs:
       - match:
           selector: '{job="all_logs"}'
           stages:
-	        # capture "timestamp", "level", "module", "msg" fields
+            # capture "timestamp", "level", "module", "msg" fields
             - regex:
                 expression: '(?P<timestamp>[\d-]+ [\d:]+),[\d]+ - (?P<level>[A-Z]+) - (?P<module>[A-Za-z_.]+) - (?P<msg>.*)'
-	        # promote "level" and "module" to labels
+            # promote "level" and "module" to labels
             - labels:
                 level:
                 module:
-			# specify the timestamp format and source field
+            # specify the timestamp format and source field
             - timestamp:
                 format: '2006-01-02 03:04:05'
                 source: timestamp
-			# specify value of output body per log message
+            # specify value of output body per log message
             - output:
                 source: msg
     static_configs:
@@ -146,6 +146,6 @@ In my case, I have [LogQL expressions](https://grafana.com/docs/loki/latest/logq
 
 ... which produces a simple timeseries like this:
 
-![Grafana Timeseries](https://github.com/tkuriyama/tkuriyama.github.io/blob/master/assets/img/grafana-1.png){:class="img-responsive"}
+![Grafana Timeseries](/assets/img/grafana-1.png){:class="img-responsive"}
 
 
