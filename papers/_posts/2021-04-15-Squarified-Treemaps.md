@@ -11,16 +11,16 @@ It's perhaps most commonly used in a heatmap, like so:
 
 ![Squarified Treemap](/assets/img/squarifiedTreemap1.png){:class="img-responsive"}
 
-Finding the optimal (as square as possible) squarified treemap is an NP-hard problem,, it would appear, but there's a sinmple, greedy heuristic described [in this paper](https://www.win.tue.nl/~vanwijk/stm.pdf) that appears to achieve good results. An implementation in Elm follows.
+Finding the optimal (as square as possible) squarified treemap is an NP-hard problem, it would appear, but there's a sinmple, greedy heuristic described [in this paper](https://www.win.tue.nl/~vanwijk/stm.pdf) that appears to achieve good results. An implementation in Elm follows.
 
 
 ## Partition
 
-Given a list of areas and a rectangle to fill, we want to partition the rectangle according to the list of areas. 
+Given a list of areas and a rectangle to fill, we want to partition the rectangle according to the list of areas (or "cells"). For convenience, the input cells are represented with the extensible record `type alias HasArea a = { a | area : Float }`, which just requires `area` to be in the record.
 
-The paper uses the simple abstraaction of a `row` to group subrectangles together, where `row` can be subdivided either vertically or horizontally.
+The paper uses the simple abstraction of a `row` to group cells together, where `row` can be subdivided either vertically or horizontally.
 
-`partition` can be written as a fold over the input areas, where the below implementation has some additional code to use [List.Nonempty](https://package.elm-lang.org/packages/mgold/elm-nonempty-list/latest/List.Nonempty), imported as `NE`.
+`partition` can be written as a fold over the input areas, where the below implementation has some additional code to work with [List.Nonempty](https://package.elm-lang.org/packages/mgold/elm-nonempty-list/latest/List.Nonempty), imported as `NE`.
 
 ```elm
 partition : Dimensions -> NE.Nonempty (HasArea a) -> NE.Nonempty (Row a)
@@ -34,8 +34,7 @@ partition dims areas =
            )
 ```
 
-The fold function implements the paper's pseudocode almost directly (note that the paper contains a typo in the direction of the comparison operator of the `if` clause, which the authors know about). 
-The main idea is just to greedily add another subrectangle to the current row, so long as the row's worst aspect ratio does not worsen.
+The fold function implements the paper's pseudocode almost directly (note that the paper contains a typo in the direction of the comparison operator of the `if` clause, which the authors know about). The main idea is to greedily add another cell to the current row, so long as the row's worst aspect ratio does not worsen.
 
 ```elm
 
@@ -117,7 +116,7 @@ makeTreemap dims areas =
 
 
 
-Since we now need the `x` and `y` for each cell, we need to track the origin in addition to the current remaining subrectangle dimensions. The origin is shifted each time a row is completed (note that unlike the example in teh paper, the origin is always increasing in this implementation).
+Since we now need the `x` and `y` for each cell, we need to track the current origin in addition to the current remaining subrectangle dimensions. The origin is shifted each time a row is completed (note that unlike the example in the paper, the origin is always increasing in this implementation).
 
 ```elm
 updateOriginAndDims : Origin -> Dimensions -> Row a -> ( Origin, Dimensions )
@@ -155,9 +154,10 @@ rowToCells row ( origin, dims ) =
     ( cells, ( origin_, dims_ ) )
 ```
 
-Running `makeTreemap` on the same input as above:
+Running `makeTreemap` on the same input as above, we get a list of cells that are ready to render:
 
 ```
+> ST.makeTreemap { x = 4, y = 6 } areas
 Nonempty 
     { cell = { area = 6 }, h = 3, w = 2, x = 0, y = 0 }
     [ { cell = { area = 6 }, h = 3, w = 2, x = 2, y = 0 }
