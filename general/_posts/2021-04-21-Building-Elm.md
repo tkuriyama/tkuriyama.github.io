@@ -7,7 +7,7 @@ tags:   elm
 
 The Elm ecosystem is one of the friendliest I've used (from the incredible compiler messages to the friendly folks on Elm Discourse and Slack). It's mature enough now, though, that there are a variety of dev tools that are widely used but not part of the official documentation.
 
-Since I find myself repeating build instructions on GitHub projects, here's an attempto DRY it up for now.
+Since I find myself repeating build instructions on GitHub projects, here's an attempto DRY it up (at least for now).
 
 
 ## Standard Build
