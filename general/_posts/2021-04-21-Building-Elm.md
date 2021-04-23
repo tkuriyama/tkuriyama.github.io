@@ -83,7 +83,7 @@ elm-live src/Main.elm ---optimize -open --start-page=main.html -- --output=elm.j
 <html>
   <head>
     <title>Elm App</title>
-    <script src="elm.min.js.gz"></script>
+    <script src="elm.js"></script>
     <style>
     </style>
   </head>
@@ -103,5 +103,6 @@ elm-live src/Main.elm ---optimize -open --start-page=main.html -- --output=elm.j
 </html>
 ```
 
-The `flags` are not necessary to provide, but it's open nice to have the window width and height for use in the Elm app.
+The `flags` are not necessary to provide, but it's open nice to have the window width and height for use in the Elm app. Note that `elm.js` should be replaced with the minified / compressed file, if using one, like `elm.min.js.gz` in production.
+
 
