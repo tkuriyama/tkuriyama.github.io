@@ -2,7 +2,7 @@
 layout: post
 title:  "Generating Fractal Trees"
 date:   2021-05-01 08:00:00 -0500
-tags:   elm,art,trees
+tags:   elm art trees
 ---
 
 Fractal trees are a cool example of simple patterns yielding results with visual appeal and complexity.
