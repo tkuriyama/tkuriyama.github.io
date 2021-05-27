@@ -7,11 +7,11 @@ tags:   elm
 
 I know almost nothing about configuring and managing servers, so it took me a while to figure out how to set up an Elm single-page-application (SPA) on an Apache server.
 
-If you're not familiar with it, an Elm SPA is an application that performs client-side routing from a single page (e.g. `index.html`). I set mine up manually as a learning process by referencing Richard Feldman's [canonical example](https://github.com/rtfeldman/elm-spa-example), but [elm-spa](https://package.elm-lang.org/packages/ryannhg/elm-spa/latest/) is probably the de facto tool nowadays to handle the boilerplate wiring.
+An Elm SPA is an application that performs client-side routing from a single page (e.g. `index.html`). I set mine up manually as a learning process by referencing Richard Feldman's [canonical example](https://github.com/rtfeldman/elm-spa-example), but [elm-spa](https://package.elm-lang.org/packages/ryannhg/elm-spa/latest/) is probably the de facto tool nowadays to handle the boilerplate wiring.
 
-Long story short, after scanning the Apache docs and this [Digital Ocean page](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite) (though I don't use Digital Ocean for hosting), the following formulation worked for my use case: redirect all URLs to `index.html` **without changing the URL string**. It's important not to change the URL (hence as `Rewrite` instead of a `Redirect`, as the Elm SPA parses the URL string for client-side routing.
+Long story short, after scanning the Apache docs and this [Digital Ocean page](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite) (though I don't use Digital Ocean for hosting), the following formulation worked for my use case: redirect all URLs to `index.html` **without changing the URL string**. It's important not to change the URL (hence `Rewrite` instead of `Redirect`, as the Elm SPA parses the URL string for client-side routing.
 
-```bash
+```apacheconf
 RewriteEngine on
 RewriteRule ^(index.html)($|/) - [L]
 RewriteRule [A-Za-z/]+ /index.html
