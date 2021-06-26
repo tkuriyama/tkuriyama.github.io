@@ -124,6 +124,7 @@ Note that all test cases for `toycoin` are written for `pytest`.
 
 This was mostly just lightly wrapping `cryptography` functions, but it was helpful to read the docs a bit and work out the type signatures.
 
+[Code on Github](https://github.com/tkuriyama/toycoin/tree/master/blockchain/toycoin)
 
 ### References
 
