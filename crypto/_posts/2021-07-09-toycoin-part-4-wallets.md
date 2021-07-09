@@ -187,6 +187,20 @@ And start to iterate through a chain of transactions, verifying wallet state as 
 
 The testing works through a few more scenarios, abbreviated here but available [in the source](https://github.com/tkuriyama/toycoin/blob/master/blockchain/tests/test_wallet.py).
 
+Incidentally, `pytest-cov` shows good coverage so far, though high coverage shouldn't be taken as infallibility.
+
+```shell
+---------- coverage: platform darwin, python 3.9.1-final-0 -----------
+Name                     Stmts   Miss  Cover
+--------------------------------------------
+toycoin/hash.py              6      0   100%
+toycoin/merkle.py          101     10    90%
+toycoin/signature.py        26      0   100%
+toycoin/transaction.py      45      1    98%
+toycoin/utils.py             6      0   100%
+toycoin/wallet.py           39      2    95%
+--------------------------------------------
+```
 
 ## Wrapping Up
 
