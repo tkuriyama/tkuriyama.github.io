@@ -34,9 +34,12 @@ This works because of `Element.below`, which prevents the layout from being modi
 
 From the [`elm-ui` docs](https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/Element) (which I should have read more carefully before, as it specifically mentions dropdowns...):
 
+```
+Let's say we want a dropdown menu. Essentially we want to say: 
+put this element below this other element, but don't affect the 
+layout when you do.
+```
 ```elm
-Let's say we want a dropdown menu. Essentially we want to say: put this element below this other element, but don't affect the layout when you do.
-
 Element.row []
     [ Element.el
         [ Element.below (Element.text "I'm below!")
