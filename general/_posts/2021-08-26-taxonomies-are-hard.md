@@ -43,7 +43,7 @@ So what are some evaluation criteria to follow when desining such a system of da
 3. It should be **practical**: assuming the labelling cannot be purely systematic / automated, deciding on the label should be possible by a human following some simple rules. This is mostly about the producer's perspective.
 
 
-## No Hard Rules
+## No Sacred Rules
 
 Keeping the evaluation criteria in mind, what is the type of ukuelel strings colors?
 
@@ -65,19 +65,19 @@ So it is both useful and practical. It is complete (by definition, since ther ei
 
 It's still far from perfect, though. For example, 33 of the 184 items in the dataset have color `Other`, some of which are really a mix of `Clear` and `Other` (like clear fluorocarbon with a colored tinge). Those are accepted because they are relatively few in number, but a greater number would merit further reworking of the data type.
 
-Perhaps there are useful evaluation criteria, but no hard rules.
+Perhaps there are useful evaluation criteria, but no sacred rules.
 
 
 ## Designing a Taxonomy
 
-Given the amount of detail in reality, all models are imperfect, but some are useful.
+Given the amount of detail in reality, all models are imperfect, but some are more useful than others.
 
 There are some table stakes for good design:
 
 - thoughtful, detailed, data-based consideration of the entire problem space (as much as practical)
 - evaluation based on (non-overlapping) completeness, usefuless, and practicality
 
-Additionally, it is helpful to have one more of the following:
+Additionally, I've found it's helpful to have one more of the following:
 
 - (appropriate degree of) user input on design choices
 - user testing ("is it useful? does it make sense?")
@@ -89,7 +89,6 @@ Finally, most systems change over time, posing questions like:
 - if the data design changes, how difficult is it to migrate the existing data to the new schema?
 - are there metrics in place to monitor the health of the data system? (e.g. proliferation of `Other` is an easy red flag)
 
-Maybe that's getting into the implementation and use of a taxonomy (as opposed to purely its design), but as the usefuless and practicality criteria corroborate, pure theory can often lead one astray.
+Maybe that's getting into the implementation and use of a taxonomy (as opposed to purely its design), but usch practical considerations are difficult to ignore in the real world.
 
-As an aside, it's interesting to consider *why* it's hard to design good taxonomies...
-
+There is, maybe, as much art in the design of a good taxonomy as there is science.
