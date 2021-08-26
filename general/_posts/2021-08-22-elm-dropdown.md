@@ -91,7 +91,7 @@ From GUI-based testing, a few items emerge:
 
 It turns out that rolling one's own dropdown with `elm-ui` isn't difficult -- at least for something rudimentary that's nonetheless very usable. The most noticeable missing feature is the ability to click outside the dropdown to close it, for which I haven't found a good solution yet..
 
-![Dropdown Menu Screenshot](/assets/img/drodown.png){:class="img-responsive"}
+![Dropdown Menu Screenshot](/assets/img/dropdown.png){:class="img-responsive"}
 
 .
 
