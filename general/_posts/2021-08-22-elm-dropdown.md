@@ -84,7 +84,9 @@ An exampe of multiple dropwdowns that filter different features of shared data i
 From GUI-based testing, a few items emerge:
 
 - The dropdown options can be very many, rendering a long menu; using `scrollbarY` with a fixed height is a good alternative.
-- It's natural user behavior to click outside the dropdown menu when it's to indicate a "cancel" action. How should that be supported? (But how to specify a click target that's everything except the dropdown?)
+
+- It's natural user behavior to click outside the dropdown menu when it's open, to indicate a "cancel" action. How should that be supported? (But how to specify a click target that's everything except the dropdown?)
+
 - When there are many filters, it can be difficult to identify which filters are selected at a glance, so some visual cues like background coloring are helpful
 
 ## Wrapping Up
