@@ -85,11 +85,11 @@ From GUI-based testing, a few items emerge:
 
 - The dropdown options can be very many, rendering a long menu; using `scrollbarY` with a fixed height is a good alternative.
 - It's natural user behavior to click outside the dropdown menu when it's to indicate a "cancel" action. How should that be supported? (But how to specify a click target that's everything except the dropdown?)
-- WHen there are many filters, it can be difficult to identify which filters are selected at a glance, so some visual cues like background coloring are helpful
+- When there are many filters, it can be difficult to identify which filters are selected at a glance, so some visual cues like background coloring are helpful
 
 ## Wrapping Up
 
-It turns out that rolling one's own dropdown with `elm-ui` isn't difficult -- at least for something rudimentary that's nonetheless very usable. The most noticeable missing feature is the ability to click outside the dropdown to close it, for which I haven't found a good solution yet..
+It turns out that rolling one's own dropdown with `elm-ui` isn't difficult -- at least for something rudimentary that's nonetheless very usable. The below screenshot shows some dropwown filters incorporating the test observations. The most noticeable missing feature is the ability to click outside the dropdown to close it, for which I haven't found a good solution yet..
 
 ![Dropdown Menu Screenshot](/assets/img/dropdown.png){:class="img-responsive"}
 
