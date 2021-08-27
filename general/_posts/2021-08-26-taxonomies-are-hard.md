@@ -23,7 +23,7 @@ Ok, well, let's pick some practical colors. How about clear, white, and black? T
 
 But... Aquila has the Red series, and aNueNue has Purple Aurora, and a bunch of composites are, like, clear with color tinges.
 
-So maybe we should enumerate the standard colors?>
+So maybe we should enumerate the standard colors?
 
 White, Black, Red, Blue, Green, Yellow, Purple, Brown. Grey... is that enough? But wait, there are no Blue or Yellow or Grey strings in the dataset at the moment. There could be some on the market, though. Also, are Worth Browns really brown, or do they look pretty much like Fremont Blacklines?
 
@@ -85,10 +85,10 @@ Additionally, I've found it's helpful to have one more of the following:
 
 Finally, most systems change over time, posing questions like:
 
-- is it easy to change the data design? how do changes propage throughout the system?
+- is it easy to change the data design? how do changes propagate throughout the system?
 - if the data design changes, how difficult is it to migrate the existing data to the new schema?
 - are there metrics in place to monitor the health of the data system? (e.g. proliferation of `Other` is an easy red flag)
 
-Maybe that's getting into the implementation and use of a taxonomy (as opposed to purely its design), but usch practical considerations are difficult to ignore in the real world.
+Maybe that's getting into the implementation and use of a taxonomy (as opposed to purely its design), but such practical considerations are difficult to ignore in the real world.
 
 There is, maybe, as much art in the design of a good taxonomy as there is science.
