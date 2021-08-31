@@ -39,11 +39,11 @@ The internet also says that Visual Studio has excellent support for TypeScript (
 
 ## Day 1 Talks / Articles
 
-- Brandon Eich, [A Brief History of JavaScript](https://www.youtube.com/watch?v=GxouWy-ZE80)
+Brandon Eich, [A Brief History of JavaScript](https://www.youtube.com/watch?v=GxouWy-ZE80)
 
-A very short talk, my main takeaway is that there is a healthy, well-considered, structured approach to the development of language standards, which has been refined over many years of struggle.
+- A very short talk, my main takeaway is that there is a healthy, well-considered, structured approach to the development of language standards, which has been refined over many years of struggle.
 
-The approach of "break the language down into orthogonal primitives that work well together" makes a lot of sense as a language committee's goal.
+- The approach of "break the language down into orthogonal primitives that work well together" makes a lot of sense as a language committee's goal.
 
 
 
