@@ -114,21 +114,13 @@ Articles referenced by Atencio on [shadowing](http://mng.bz/OEmR), [private clas
 
 ## JavaScript, the Good Parts
 
-**Chapter 6 Arrays**
+**Chapter 6 Arrays -> Appendix B**
 
-**Chapter 7 Regex**
-
-**Chapter 8 Methods**
+Skimmed the chapters.
 
 - sorting is coerced to strings by default; provide comparison function to sort eg numbers `function (a, b) { return a - b }`
 
-**Chapter 9 Style**
-
-**Chapter 10 Beautiful Features**
-
-**Appendix A & B -- The Awful and Bad Parts**
-
-- maybe the most interesting parts of this book!
+- the appendices A & B are maybe the most interesting parts of the book!
 
 
 ## JoJ
