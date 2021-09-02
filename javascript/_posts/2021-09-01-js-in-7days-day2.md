@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript in 10 Days: Day 2"
-date:   2021-09-01 08:00:00 -0500
+date:   2021-09-01 18:00:00 -0500
 tags:   javascript typescript
 ---
 
