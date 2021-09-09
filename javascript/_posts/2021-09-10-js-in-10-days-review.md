@@ -7,7 +7,7 @@ tags:   javascript typescript
 
 TLDR: there's a lot to learn in the JavaScript ecosystem, and ten days is not nearly enough. As Norvig said, it's more about [teaching yourself to program in ten years](https://norvig.com/21-days.html).
 
-I recently set out to learn as much JavaScript as possible in 10 days. I've filtered the individual days' posts from the blog home, but they're all linked below.
+I recently set out to learn as much JavaScript as possible in ten days. I've filtered the individual days' posts from the blog home, but they're all linked below.
 
 [Day 1](https://tkuriyama.github.io/javascript/2021/08/31/js-in-7days-day1.html) | [Day2](https://tkuriyama.github.io/javascript/2021/09/01/js-in-7days-day2.html) | [Day 3](https://tkuriyama.github.io/javascript/2021/09/02/js-in-10days-day3.html) | [Day 4](https://tkuriyama.github.io/javascript/2021/09/03/js-in-10days-day4.html) | [Day 5](https://tkuriyama.github.io/javascript/2021/09/04/js-in-10days-day5.html)
 
@@ -76,6 +76,6 @@ I'd also like to find a really good book on TypeScript, for which perhaps the Re
 ## Future Todos
 
 - Tooling: working with TypeScript, Babel, React, etc in emacs, as well as the general config and build options
-- MDN docs: [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA); [Vue tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started), [CSS Tutorials](https://developer.mozilla.org/en-US/docs/Web/CSS/Tutorials)
+- MDN docs: [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA), [Vue tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started), [CSS Tutorials](https://developer.mozilla.org/en-US/docs/Web/CSS/Tutorials)
 - Kyle Simpson, [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed)
 - Eric Elliott, [Composing Software](https://leanpub.com/composingsoftware)
