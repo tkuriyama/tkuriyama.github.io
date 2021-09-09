@@ -9,9 +9,9 @@ TLDR: there's a lot to learn in the JavaScript ecosystem, and ten days is not ne
 
 I recently set out to learn as much JavaScript as possible in 10 days. I've filtered the individual days' posts from the blog home, but they're all linked below.
 
-- [Day 1](https://tkuriyama.github.io/javascript/2021/09/01/js-in-7days-day1.html) | [Day2](https://tkuriyama.github.io/javascript/2021/09/01/js-in-7days-day2.html) | [Day 3](https://tkuriyama.github.io/javascript/2021/09/01/js-in-10days-day3.html) | [Day 4](https://tkuriyama.github.io/javascript/2021/09/02/js-in-10days-day4.html) | [Day 5](https://tkuriyama.github.io/javascript/2021/09/02/js-in-10days-day5.html)
+- [Day 1](https://tkuriyama.github.io/javascript/2021/08/31/js-in-7days-day1.html) | [Day2](https://tkuriyama.github.io/javascript/2021/09/01/js-in-7days-day2.html) | [Day 3](https://tkuriyama.github.io/javascript/2021/09/02/js-in-10days-day3.html) | [Day 4](https://tkuriyama.github.io/javascript/2021/09/03/js-in-10days-day4.html) | [Day 5](https://tkuriyama.github.io/javascript/2021/09/04/js-in-10days-day5.html)
 
-- [Day 6]() | [Day 7] () |Day 8]() | [Day 9]() | [Day 10]()
+- [Day 6](https://tkuriyama.github.io/javascript/2021/09/05/js-in-10days-day6.html) | [Day 7](https://tkuriyama.github.io/javascript/2021/09/06/js-in-10days-day7.html) | [Day 8](https://tkuriyama.github.io/javascript/2021/09/07/js-in-10days-day8.html) | [Day 9](https://tkuriyama.github.io/javascript/2021/09/08/js-in-10days-day9.html) | [Day 10](https://tkuriyama.github.io/javascript/2021/09/08/js-in-10days-day10.html)
 
 
 ## Overview

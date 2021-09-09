@@ -2,7 +2,7 @@
 layout: post
 title:  "JavaScript in 10 Days: Day 1"
 date:   2021-08-31 09:00:00 -0500
-tags:   javascript typescript
+tags:   javascript typescript archive
 ---
 
 In 1995, Brandon Eich developed the first version of JavaScript for Netscape in 10 days (during which, Eich notes, he didn't sleep very much).

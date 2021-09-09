@@ -2,7 +2,7 @@
 layout: post
 title:  "JavaScript in 10 Days: Day 2"
 date:   2021-09-01 18:00:00 -0500
-tags:   javascript typescript
+tags:   javascript typescript archive
 ---
 
 Today's plan is to get through the TypeScript handbook and to skim as much of Crockford as possible, as there seem to be many things in the Crockford that are no longer applicable.
