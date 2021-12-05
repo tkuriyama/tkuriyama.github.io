@@ -22,7 +22,7 @@ TLDR: [try the app](https://tarokuriyama.com/elmsearch/)!
 
 Since the Elm package index is a single-page application that manipulates the DOM with JavaScript, simple HTTP GETs with tools such as `requests` don't work. (More specifically, they just return the bare-bones HTML page that underlies every Elm application, without any of the actual application data that are rendered by the browser after processing the JavaScript.)
 
-Selenium is one tool to solve this problem. The basic instructions for installing and getting started with Python 3.x are all that's required for this use case.
+Selenium is one tool to solve this problem. The [basic instructions](https://selenium-python.readthedocs.io/getting-started.html) for installing and getting started with Python 3.x are all that's required for this use case.
 
 To open a page with the Chrome web driver and capture the browser-rendered HTML source:
 
