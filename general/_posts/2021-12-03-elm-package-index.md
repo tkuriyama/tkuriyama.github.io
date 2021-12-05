@@ -22,7 +22,7 @@ TLDR: [try the app](https://tarokuriyama.com/elmsearch/)!
 
 Since the Elm package index is a single-page application that manipulates the DOM with JavaScript, simple HTTP GETs with tools such as `requests` don't work. (More specifically, they just return the bare-bones HTML page that underlies every Elm application, without any of the actual application data that are rendered by the browser after processing the JavaScript.)
 
-Selenium is one tool to solve this problem. The [basic instructions](https://selenium-python.readthedocs.io/getting-started.html) for installing and getting started with Python 3.x are all that's required for this use case.
+0Selenium is one tool to solve this problem. The [basic instructions](https://selenium-python.readthedocs.io/getting-started.html) for installing and getting started with Python 3.x are all that's required for this use case.
 
 To open a page with the Chrome web driver and capture the browser-rendered HTML source:
 
@@ -106,15 +106,15 @@ def get_dependency_freq(i: PT.IndexNum,
 
 **To Stem, or Not To Stem?**
 
-The input words to be indexed are preprocessed with tokenization and the `PorterStemmer` from [NLTK](https://www.nltk.org/index.html). For plaintext, it makes sense. How about for code?
+The input words to be indexed are pre-processed with tokenization and the `PorterStemmer` from [NLTK](https://www.nltk.org/index.html). For plaintext, it makes sense. How about for code?
 
-On the one hand, the code being included in the index consists mianly of function and type names -- so it seems like they should perhaps be included literally. On the other hand, the query terms will be stemmed to match the stemmed plaintext, so unstemmed words in the index would decrease the search power. A cursory internet search didn't return insights on the topic. So, without much deeper consideration for whether it's good or bad to stem code, all words are stemmed.
+On the one hand, the code being included in the index consists mainly of function and type names -- so it seems like they should perhaps be included literally. On the other hand, the query terms will be stemmed to match the stemmed plaintext, so unstemmed words in the index would decrease the search power. A cursory google search didn't return insights on the topic. So, without much deeper consideration for whether it's good or bad to stem code, all words are stemmed.
 
 **The Build Pipeline**
 
 Given data to index on disk, the build pipeline is as follows:
 
-1. first pass through all documents to build global data (scoring based on document-occurences and package dependencies
+1. first pass through all documents to build global data (scoring based on document-occurrences and package dependencies
 2. second pass through all documents to score each document, taking into account the global data
 3. [pickle](https://docs.python.org/3/library/pickle.html) the index to facilitate testing
 4. perform validation on the generated index
@@ -153,7 +153,7 @@ Testing the generated index using the Python pickle, we see that search returns 
 
 In this case, there is a single query term, so all of the search results contain the query term exactly, yielding a score of 1.0.
 
-The validation stage uses the same `query` function to implement some basic checks, like ensuring that querying by author and package name always retunrs the package as the first result.
+The validation stage uses the same `query` function to implement some basic checks, like ensuring that querying by author and package name always returns the package as the first result.
 
 On the Elm client side, it is mainly setting up a UI to allow user input and display results. Fortunately, there is a PorterStemmer library in Elm as well -- in fact, more than one, as shown by an index query:
 
@@ -180,7 +180,7 @@ query pkgRefDict indexMaps queryTokens =
 
 ## Wrapping Up
 
-I added some diff'ing logic to the Python scraper, so it can incrementally retrieve version updates, as well as new packges that are added to the official Elm package index.
+I added some diff'ing logic to the Python scraper, so it can incrementally retrieve version updates, as well as new packages that are added to the official Elm package index.
 
 As a naive implementation of a keyword search engine... it seems to be reasonably useful -- at least enough so for me to use personally in Elm projects.
 
