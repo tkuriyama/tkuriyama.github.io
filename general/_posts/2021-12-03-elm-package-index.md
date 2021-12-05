@@ -5,7 +5,7 @@ date:   2021-12-03 09:00:00 -0500
 tags:   elm
 ---
 
-The search function in the [Elm package index]() is relatively limited. Most importantly, documentation such as READMEs do not appear to be indexed, limiting the power of keyword search.
+The search function in the [Elm package index](https://package.elm-lang.org/) is relatively limited. Most importantly, documentation such as READMEs do not appear to be indexed, limiting the power of keyword search.
 
 Similar to Haskell (perhaps most prominently, Hoogle), there is some ability to [search by types](https://klaftertief.github.io/elm-search/). There has also [been work done](https://elm.dmy.fr/) to associated metrics such as downloads to packages. I haven't seen another project to build a deeper search index, though, so this experiment follows.
 
