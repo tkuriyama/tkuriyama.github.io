@@ -30,3 +30,9 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # # missing as of Ruby 3.0, needs to be added 
 gem "webrick"
+
+# Updates
+gem "csv"
+gem "logger"
+gem "base64"
+gem "bigdecimal"
