@@ -8,9 +8,6 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
-  {% if site.tags != "" %}
-  {% include collect_tags.html %}
-  {% endif %}
   <script type="text/x-mathjax-config">
    MathJax.Hub.Config({
     extensions: [
