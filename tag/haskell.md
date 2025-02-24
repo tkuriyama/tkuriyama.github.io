@@ -1,0 +1,1 @@
+---layout: tags.htmltitle: "Tag: haskell"tag: haskell---
