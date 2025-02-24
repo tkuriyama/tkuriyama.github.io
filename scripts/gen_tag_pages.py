@@ -45,11 +45,11 @@ def get_tags(fname: str) -> List[str]:
 def gen_tag_page(root_dir, tag):
     """Generate tag page."""
     content = (
-        '---'
-        'layout: tags.html'
-        f'title: "Tag: {tag}"'
-        f'tag: {tag}'
-        '---'
+        '---\n'
+        'layout: tags.html\n'
+        f'title: "Tag: {tag}"\n'
+        f'tag: {tag}\n'
+        '---\n'
     )
     with open(os.path.join(root_dir, f'{tag}.md'), 'w') as f:
         f.write(content)
