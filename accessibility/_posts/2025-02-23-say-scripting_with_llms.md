@@ -124,3 +124,108 @@ function saymode() {
     fi
 }
 ```
+
+## Can You Do Better?
+
+Some usability improvements that come to mind:
+
+- output can be automatically Limited in length
+- commands can be whitelisted or blacklisted, since e.g. "vi" or "men" that start a new program or terminal paging mode are not compatible
+
+What does a different model like Grok 3 think?
+
+`I want you to comment on this Zsh Voice mode program. What are some good usability or feature enhancements to consider?`
+
+Given a simple prompt like the above, Grok 3 yields an impressive answer.
+
+- It identifies and solves both the above points without any specific prompting
+- It provides several more suggestions and implements them with lucid explanations
+- It identifies several nuances and gotchas, providing clear explanations 
+
+Overall, it generates a more complex and feature-rich program ([copy-paste of the interactive session](https://gist.github.com/tkuriyama/bac9fb086bb5d56be7f736641af70a1d)). The revised script runs immediately without any modifications!
+
+There are some oddities in the shell experience introduced by the more advanced functionality, which Grok 3 couldn't fully debug. so in the end I reverted to the original, simpler script and asked it to implement only a subset of improvements.
+
+Here is the revised, working script, verbatim from Grok 3 (except for the whitelist of commands).
+
+```zsh
+# Global Variables
+typeset -g SAYMODE_ENABLED=false              # Tracks whether Say Mode is enabled
+typeset -g LAST_COMMAND_OUTPUT=""             # Stores the last command's output
+typeset -g DEFAULT_PROMPT="$PROMPT"           # Stores the default prompt for restoration
+typeset -gi SAYMODE_OUTPUT_LIMIT=${SAYMODE_OUTPUT_LIMIT:-500}  # Output limit in characters, default 100
+typeset -g -A SAYMODE_COMMANDS=(
+    ls 1 pwd 1 echo 1 date 1
+    whoami 1 hostname 1 uname 1 which 1 where 1
+    type 1 env 1 printenv 1 alias 1
+    du 1 df 1 ll 1 la 1 lh 1 
+)  # Whitelist of safe commands
+
+# Function to speak the last command output
+function speak_last_output() {
+    if [[ $SAYMODE_ENABLED == true && -n "$LAST_COMMAND_OUTPUT" ]]; then
+        local output_to_speak
+        if [[ $SAYMODE_OUTPUT_LIMIT -gt 0 ]]; then
+            output_to_speak="${LAST_COMMAND_OUTPUT:0:$SAYMODE_OUTPUT_LIMIT}"
+        else
+            output_to_speak="$LAST_COMMAND_OUTPUT"
+        fi
+        echo "$output_to_speak    " | say -r 300  # Preserve original rate of 300 wpm
+        LAST_COMMAND_OUTPUT=""
+    fi
+}
+
+# Function to capture command output
+function capture_output() {
+    LAST_COMMAND_OUTPUT=$(eval "$1" 2>&1)  # Capture stdout and stderr
+    return ${PIPESTATUS[0]}  # Return the exit status of the command
+}
+
+# Pre-execution hook to process whitelisted commands
+function preexec() {
+    if [[ $SAYMODE_ENABLED == true && -n "$1" ]]; then
+        local cmd_name=${1%%[[:space:]]*}  # Extract the first word of the command
+        if [[ -n "${SAYMODE_COMMANDS[$cmd_name]}" ]]; then  # Check if command is in whitelist
+            capture_output "$1"
+            return 1  # Prevent original command execution
+        fi
+    fi
+}
+
+# Set up Zsh hooks
+preexec_functions+=(preexec)      # Run preexec before each command
+precmd_functions+=(speak_last_output)  # Run speak_last_output after each command
+
+# Function to enable Say Mode
+function saymode_on() {
+    SAYMODE_ENABLED=true
+    PROMPT="%K{green}SAYMODE%k $DEFAULT_PROMPT"  # Update prompt to indicate Say Mode
+    echo "Say mode enabled."
+}
+
+# Function to disable Say Mode
+function saymode_off() {
+    PROMPT="$DEFAULT_PROMPT"  # Restore original prompt
+    SAYMODE_ENABLED=false
+    echo "Say mode disabled."
+}
+
+# Main Say Mode control function with toggle
+function saymode() {
+    if [[ "$1" == "on" ]]; then
+        saymode_on
+    elif [[ "$1" == "off" ]]; then
+        saymode_off
+    elif [[ -z "$1" ]]; then  # Toggle if no argument is provided
+        if [[ $SAYMODE_ENABLED == true ]]; then
+            saymode_off
+        else
+            saymode_on
+        fi
+    else
+        echo "Usage: saymode {on|off}"  # Updated usage message
+    fi
+}
+
+
+```
